@@ -1,0 +1,19 @@
+{
+	"comments": true,
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets":{
+					"esmodules":true
+				},
+				"useBuiltIns":"usage",
+				"corejs": 3
+			}
+		]
+	],
+	"plugins": [
+		"transform-object-rest-spread",
+		"syntax-dynamic-import"
+	]
+}

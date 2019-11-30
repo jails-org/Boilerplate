@@ -1,0 +1,10 @@
+extends /layouts/default.pug
+include /apps/home/components/welcome/index.pug
+
+block variables
+
+block head
+	+log( route.params )
+
+block content
+	+welcome()

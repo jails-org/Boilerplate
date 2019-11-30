@@ -1,0 +1,17 @@
+include /components/hello-world/index.pug
+
+mixin welcome()
+
+	+hello-world()
+
+		- const routeHome = getRoute( 'home' )
+		- const quote = getData('quote')
+
+		blockquote #{quote.antoine.blockquote}
+		cite #{quote.antoine.cite}
+
+		a( href=routeHome.path ) /#{routeHome.title}
+
+		ul.list
+			li( v-repeat="item in items" )
+				img( v-src="{{item.image}}" alt="" )
