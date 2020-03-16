@@ -13,5 +13,12 @@ export default ({ routes }) => ({
 
 	getRoute( app ){
 		return routes.find( r => r.app === app )
+	},
+
+	toTemplate( object, prefix = 'item' ){
+		return Object.keys(object).reduce((acc, key) => ({
+			...acc,
+			[key]: `{{ ${prefix}.${key} }}`
+		}), {})
 	}
 })

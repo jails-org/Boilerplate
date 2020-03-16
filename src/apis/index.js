@@ -1,5 +1,7 @@
 import { getCharacters } from './sample'
 
 export default {
-	characters: getCharacters
+	characters(){
+		return getCharacters()
+	}
 }
