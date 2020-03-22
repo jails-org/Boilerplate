@@ -1,5 +1,5 @@
 import apis from './apis'
-import routes from '../routes'
+import routes from '../src/presentation/routes'
 import globals from './globals'
 
 export default async () => {
