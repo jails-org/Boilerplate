@@ -1,9 +1,9 @@
-import main from 'main'
+import main  from 'js/main'
 import jails from 'jails-js'
 import store from 'stores'
 
 // @Components
-import * as application from 'application'
+import * as application from 'js/application'
 import * as page from './app'
 import * as hello from 'components/hello-world'
 
