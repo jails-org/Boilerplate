@@ -5,8 +5,7 @@ import store from 'stores'
 // @Components
 import * as application from 'js/application'
 import * as page from './app'
-import * as hello from 'components/hello-world'
-
+import * as rickandmorty from './components/rickandmorty'
 
 // @Dependencies
 const dependencies = {
@@ -17,7 +16,7 @@ const dependencies = {
 jails.register('application', application, dependencies)
 jails.register('about', page, dependencies)
 
-// @Components
-jails.register('hello-world', hello, dependencies)
 
+// @Components
+jails.register('rickandmorty', rickandmorty, dependencies)
 main()

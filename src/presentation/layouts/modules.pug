@@ -50,7 +50,7 @@ mixin log( variable )
 
 mixin theme()
 	script.
-		var store = JSON.parse(localStorage.getItem('STORE'))
+		var store = JSON.parse(sessionStorage.getItem('STORE')) || {}
 		document.documentElement.setAttribute('data-static', true)
 		document.documentElement.setAttribute('data-theme', store.theme)
 

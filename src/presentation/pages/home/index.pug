@@ -1,10 +1,22 @@
 extends /layouts/default.pug
-include ./components/welcome/index.pug
 
-block variables
+include /components/hello-world/index.pug
+include ./components/todo/index.pug
 
 block head
 	+log( route.params )
 
 block content
-	+welcome()
+
+	+hello-world()
+
+		- const routeAbout = getRoute('about')
+		- const quote = getData('quote')
+
+		blockquote #{quote.davinci.blockquote}
+		cite #{quote.davinci.cite}
+
+		p Visit :
+			a( href=routeAbout.path ) /#{routeAbout.title}
+
+	+todo()

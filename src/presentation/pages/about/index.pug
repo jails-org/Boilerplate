@@ -1,5 +1,7 @@
 extends /layouts/default.pug
-include ./components/welcome/index.pug
+
+include /components/hello-world/index.pug
+include ./components/rickandmorty/index.pug
 
 block variables
 
@@ -7,4 +9,16 @@ block head
 	+log( route.params )
 
 block content
-	+welcome()
+
+	+hello-world()
+
+		- const routeHome = getRoute( 'home' )
+		- const quote = getData('quote')
+
+		blockquote #{quote.antoine.blockquote}
+		cite #{quote.antoine.cite}
+
+		p Visit:
+			a( href=routeHome.path ) /#{routeHome.title}
+
+	+rickandmorty()
