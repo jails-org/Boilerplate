@@ -41,9 +41,5 @@ const actions = {
 	RENDER_ITEMS: (state, {items}) => ({
 		items,
 		loading : false
-	}),
-
-	SET_THEME: (state, {theme}) => ({
-		theme
 	})
 }

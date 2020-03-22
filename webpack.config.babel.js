@@ -49,6 +49,7 @@ export default tasks()
 		},
 
 		resolve: {
+			extensions: ['*', '.js', '.jsx'],
 			modules: [
 				source,
 				path.resolve(__dirname, 'src'),
@@ -159,11 +160,12 @@ export default tasks()
 					loader: 'pug-loader',
 					options: {
 						root: source,
-						basedir: source
+						basedir: source,
+						pretty: isdev
 					}
 				},
 				{
-					test: /\.js$/,
+					test: /\.(js|jsx)$/,
 					exclude: /node_modules/,
 					loader: 'babel-loader'
 				},

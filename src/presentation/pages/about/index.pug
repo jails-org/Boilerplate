@@ -13,12 +13,14 @@ block content
 	+hello-world()
 
 		- const routeHome = getRoute( 'home' )
+		- const routeSample = getRoute('sample')
 		- const quote = getData('quote')
 
 		blockquote #{quote.antoine.blockquote}
 		cite #{quote.antoine.cite}
 
 		p Visit:
-			a( href=routeHome.path ) /#{routeHome.title}
+			a( href=routeHome.path ) /#{routeHome.title},
+			a( href=routeSample.path ) /#{routeSample.title}
 
 	+rickandmorty()

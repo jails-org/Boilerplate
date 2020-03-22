@@ -12,6 +12,6 @@ export default function rickandmorty ({ main, injection, render }) {
 	}
 
 	const subscriptions = () => {
-		store.subscribe( render )
+		store.subscribe({ RENDER_ITEMS: render })
 	}
 }

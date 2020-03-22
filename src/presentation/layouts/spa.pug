@@ -6,7 +6,7 @@ include ./modules.pug
 html
 
 	head
-		title Boilerplate Jails | #{route.title}
+		title Boilerplate SPA | React | #{route.title}
 		meta( charset="UTF-8" )
 		meta( name="viewport" content="width=device-width, initial-scale=1" )
 		link( rel="icon" href="/images/logo-stripes.png" )
@@ -14,16 +14,14 @@ html
 
 		+prevent-alert()
 		+dns-prefetch()
-		+style()
 		+js()
+		+style()
 		+fonts()
 
 		block head
 
 	body
-
-		div.site( data-component=`application ${app}` )
-			block content
+		block content
 
 		+third-party()
 		+svg-sprite()

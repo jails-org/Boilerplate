@@ -11,12 +11,14 @@ block content
 	+hello-world()
 
 		- const routeAbout = getRoute('about')
+		- const routeSample = getRoute('sample')
 		- const quote = getData('quote')
 
 		blockquote #{quote.davinci.blockquote}
 		cite #{quote.davinci.cite}
 
 		p Visit :
-			a( href=routeAbout.path ) /#{routeAbout.title}
+			a( href=routeAbout.path ) /#{routeAbout.title},
+			a( href=routeSample.path ) /#{routeSample.title}
 
 	+todo()
