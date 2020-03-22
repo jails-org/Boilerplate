@@ -13,7 +13,7 @@
   "keywords": [],
   "dependencies": {
     "axios": "^0.18.0",
-    "jails-js": "^4.0.0",
+    "jails-js": "^4.0.4",
     "jails.packages": "jails-org/packages#v1.7.0"
   },
   "devDependencies": {
