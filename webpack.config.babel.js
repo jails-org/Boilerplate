@@ -18,7 +18,7 @@ import pack from './package.json'
 import tasks from './tasks'
 
 /* Source & Dist */
-const source = path.resolve(__dirname, 'src/presentation')
+const source = path.resolve(__dirname, 'presentation')
 const dist = path.resolve(__dirname, 'dist')
 
 /* Environment Modes */
@@ -29,7 +29,7 @@ const isdev = mode !== 'production'
 const entryFiles = glob.sync(`${source}/pages/**/*{.js,.styl}`)
 const entryFilesIgnore = /components/
 
-global.APPCONFIG = require('./src/config/appconfig')[config]
+global.APPCONFIG = require('./config/appconfig')[config]
 
 const assetsFolder = '' // E.g: assets/
 
@@ -52,7 +52,7 @@ export default tasks()
 			extensions: ['*', '.js', '.jsx'],
 			modules: [
 				source,
-				path.resolve(__dirname, 'src'),
+				path.resolve(__dirname),
 				path.resolve(__dirname, 'node_modules')
 			]
 		},
@@ -79,8 +79,8 @@ export default tasks()
 
 		plugins: [
 			new SVGSpritemapPlugin([
-				'./src/assets/icons/*.svg',
-				'./src/assets/icons/**/*.svg'
+				'./assets/icons/*.svg',
+				'./assets/icons/**/*.svg'
 			], {
 				output: {
 					filename: `${assetsFolder}icons/sprite.svg`
@@ -183,7 +183,7 @@ export default tasks()
 					use: [
 						MiniCssExtractPlugin.loader,
 						'css-loader',
-						'stylus-loader?paths[]=./src/presentation&resolve url'
+						'stylus-loader?paths[]=./presentation&resolve url'
 					]
 				},
 				{

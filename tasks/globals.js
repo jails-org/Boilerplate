@@ -9,7 +9,7 @@ export default ({ routes }) => ({
 		},
 
 		getData(name) {
-			return JSON.parse(fs.readFileSync(`./src/data/static/${name}.json`, 'utf-8'))
+			return JSON.parse(fs.readFileSync(`./data/static/${name}.json`, 'utf-8'))
 		},
 
 		getRoute(app) {
