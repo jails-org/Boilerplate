@@ -29,7 +29,7 @@ const isdev = mode !== 'production'
 const entryFiles = glob.sync(`${source}/pages/**/*{.js,.styl}`)
 const entryFilesIgnore = /components/
 
-global.APPCONFIG = require('./config/appconfig')[config]
+global.APPCONFIG = require('./appconfig')[config]
 
 const assetsFolder = '' // E.g: assets/
 
