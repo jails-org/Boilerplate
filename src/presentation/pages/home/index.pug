@@ -10,9 +10,9 @@ block content
 
 	+hello-world()
 
-		- const routeAbout = getRoute('about')
-		- const routeSample = getRoute('sample')
-		- const quote = getData('quote')
+		- const routeAbout = Boilerplate.getRoute('about')
+		- const routeSample = Boilerplate.getRoute('sample')
+		- const quote = Boilerplate.getData('quote')
 
 		blockquote #{quote.davinci.blockquote}
 		cite #{quote.davinci.cite}

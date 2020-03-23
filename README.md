@@ -66,6 +66,6 @@ All defined on `webpack.config.babel.js`:
 
 Global functions to be used on `pug` files, all defined on `/tasks/globals.js`
 
-- toJSON( JSONObject ) : Transforms a json to string, useful to be used on `data` attribute on HTMLElements.
-- getData( String ) : Get the json object from a file in `/data` folder.
-- getRoute( String ) : Get a route from a specific `app`.  Ex. getRoute('home')
+- Boilerplate.toJSON( JSONObject ) : Transforms a json to string, useful to be used on `data` attribute on HTMLElements.
+- Boilerplate.getData( String ) : Get the json object from a file in `/data` folder.
+- Boilerpate.getRoute( String ) : Get a route from a specific `app`.  Ex. Boilerplate.getRoute('home')

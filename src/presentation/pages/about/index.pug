@@ -12,9 +12,9 @@ block content
 
 	+hello-world()
 
-		- const routeHome = getRoute( 'home' )
-		- const routeSample = getRoute('sample')
-		- const quote = getData('quote')
+		- const routeHome = Boilerplate.getRoute( 'home' )
+		- const routeSample = Boilerplate.getRoute('sample')
+		- const quote = Boilerplate.getData('quote')
 
 		blockquote #{quote.antoine.blockquote}
 		cite #{quote.antoine.cite}
