@@ -18,7 +18,7 @@ import pack from './package.json'
 import tasks from './tasks'
 
 /* Source & Dist */
-const source = path.resolve(__dirname, 'src')
+const source = path.resolve(__dirname, 'presentation')
 const dist = path.resolve(__dirname, 'dist')
 
 /* Environment Modes */
@@ -26,10 +26,10 @@ const mode = process.env.NODE_ENV || 'production'
 const config = process.env.ENV == 'dev' ? 'development' : 'production'
 const isdev = mode !== 'production'
 
-const entryFiles = glob.sync(`${source}/apps/**/*{.js,.styl}`)
+const entryFiles = glob.sync(`${source}/pages/**/*{.js,.styl}`)
 const entryFilesIgnore = /components/
 
-global.APPCONFIG = require('./src/appconfig')[config]
+global.APPCONFIG = require('./appconfig')[config]
 
 const assetsFolder = '' // E.g: assets/
 
@@ -49,7 +49,12 @@ export default tasks()
 		},
 
 		resolve: {
-			modules: [source, 'node_modules']
+			extensions: ['*', '.js', '.jsx'],
+			modules: [
+				source,
+				path.resolve(__dirname),
+				path.resolve(__dirname, 'node_modules')
+			]
 		},
 
 		devServer: {
@@ -74,8 +79,8 @@ export default tasks()
 
 		plugins: [
 			new SVGSpritemapPlugin([
-				'./src/icons/*.svg',
-				'./src/icons/**/*.svg'
+				'./assets/icons/*.svg',
+				'./assets/icons/**/*.svg'
 			], {
 				output: {
 					filename: `${assetsFolder}icons/sprite.svg`
@@ -90,7 +95,7 @@ export default tasks()
 			routes.map((route) => {
 				const { app, file } = route
 				return new HtmlWebPackPlugin({
-					template: `./src/apps/${app}/index.pug`,
+					template: `${source}/pages/${app}/index.pug`,
 					templateParameters: {
 						app,
 						routes,
@@ -152,22 +157,23 @@ export default tasks()
 			rules: [
 				{
 					test: /\.pug$/,
-					loader: "pug-loader",
+					loader: 'pug-loader',
 					options: {
 						root: source,
-						basedir: source
+						basedir: source,
+						pretty: isdev
 					}
 				},
 				{
-					test: /\.js$/,
+					test: /\.(js|jsx)$/,
 					exclude: /node_modules/,
-					loader: "babel-loader"
+					loader: 'babel-loader'
 				},
 				{
 					test: /\.html$/,
 					use: [
 						{
-							loader: "html-loader",
+							loader: 'html-loader',
 							options: { minimize: true }
 						}
 					]
@@ -177,7 +183,7 @@ export default tasks()
 					use: [
 						MiniCssExtractPlugin.loader,
 						'css-loader',
-						'stylus-loader?paths[]=./src&resolve url'
+						'stylus-loader?paths[]=./presentation&resolve url'
 					]
 				},
 				{

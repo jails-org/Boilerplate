@@ -1,0 +1,27 @@
+doctype html
+
+block variables
+include ./modules.pug
+
+html
+
+	head
+		title Boilerplate SPA | React | #{route.title}
+		meta( charset="UTF-8" )
+		meta( name="viewport" content="width=device-width, initial-scale=1" )
+		link( rel="icon" href="/images/logo-stripes.png" )
+		link( rel="stylesheet" href="//bootswatch.com/4/materia/bootstrap.min.css" )
+
+		+prevent-alert()
+		+dns-prefetch()
+		+js()
+		+style()
+		+fonts()
+
+		block head
+
+	body
+		block content
+
+		+third-party()
+		+svg-sprite()

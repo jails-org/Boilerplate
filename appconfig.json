@@ -1,0 +1,16 @@
+{
+
+	"development": {
+		"analytics" :"UA-XXXXX-Y",
+		"endpoints": {
+			"rickandmorty": "https://rickandmortyapi.com/api"
+		}
+	},
+
+	"production": {
+		"analytics": "UA-XXXXX-Y",
+		"endpoints": {
+			"rickandmorty": "https://rickandmortyapi.com/api"
+		}
+	}
+}

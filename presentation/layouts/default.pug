@@ -1,0 +1,29 @@
+doctype html
+
+block variables
+include ./modules.pug
+
+html
+
+	head
+		title Boilerplate Jails | #{route.title}
+		meta( charset="UTF-8" )
+		meta( name="viewport" content="width=device-width, initial-scale=1" )
+		link( rel="icon" href="/images/logo-stripes.png" )
+		link( rel="stylesheet" href="//bootswatch.com/4/materia/bootstrap.min.css" )
+
+		+prevent-alert()
+		+dns-prefetch()
+		+style()
+		+js()
+		+fonts()
+
+		block head
+
+	body
+
+		div.site( data-component=`application ${app}` )
+			block content
+
+		+third-party()
+		+svg-sprite()

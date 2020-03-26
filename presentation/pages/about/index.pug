@@ -1,0 +1,26 @@
+extends /layouts/default.pug
+
+include /components/hello-world/index.pug
+include ./components/rickandmorty/index.pug
+
+block variables
+
+block head
+	+log( route.params )
+
+block content
+
+	+hello-world()
+
+		- const routeHome = Boilerplate.getRoute( 'home' )
+		- const routeSample = Boilerplate.getRoute('sample')
+		- const quote = Boilerplate.getData('quote')
+
+		blockquote #{quote.antoine.blockquote}
+		cite #{quote.antoine.cite}
+
+		p Visit:
+			a( href=routeHome.path ) /#{routeHome.title},
+			a( href=routeSample.path ) /#{routeSample.title}
+
+	+rickandmorty()
