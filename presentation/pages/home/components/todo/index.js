@@ -4,11 +4,11 @@ export default function todo ({ main, msg, injection }) {
 	const { router } = injection
 
 	main( _ => [
-		register,
+		events,
 		routes
 	])
 
-	const register = ({ on }) => {
+	const events = ({ on }) => {
 		on('submit', '.add', add)
 		on('submit', 'form', prevent)
 		on('click', '.clear', clear)
@@ -115,7 +115,7 @@ export const actions = {
 	}),
 
 	SAVE: (state, { id, text }) => ({
-		todos: state.todos.map(item => (item.id === id ? Object.assign(item, { text, edit: false }) : item))
+		todos: state.todos.map( item => item.id === id? { ...item, text, edit: false } : item )
 	}),
 
 	EDIT: (state, { id }) => ({
