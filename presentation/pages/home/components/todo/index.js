@@ -10,12 +10,11 @@ export default function todo ({ main, msg, injection }) {
 
 	const events = ({ on }) => {
 		on('submit', '.add', add)
-		on('submit', 'form', prevent)
 		on('click', '.clear', clear)
+		on('blur', 'li .form-control', save)
 		on('click', '.remove', action('REMOVE'))
 		on('dblclick', 'label', action('EDIT'))
 		on('change', '.check', action('TOGGLE'))
-		on('blur', 'li .form-control', save)
 	}
 
 	const routes = () => {
@@ -23,30 +22,17 @@ export default function todo ({ main, msg, injection }) {
 		router.get('', _ => router.navigate('/all'))
 	}
 
-	const getData = target => {
-		const id = +target.dataset.id
-		const text = target.value
-		return { id, text }
-	}
+	const add = ( e ) => {
 
-	const action = name => ({ target }) => {
-		const { id } = getData(target)
-		msg.dispatch(name, { id })
-	}
-
-	const prevent = e => {
-		e.preventDefault()
-	}
-
-	const clear = () => {
-		msg.dispatch('CLEAR')
-	}
-
-	const add = ({ target }) => {
+		const { target } = e
 		const text = target.text.value.trim()
-		if (text) {
+
+		if ( text ) {
 			msg.dispatch('ADD', { text })
+				.then(_ => target.text.value = '')
 		}
+
+		e.preventDefault()
 	}
 
 	const save = ({ target }) => {
@@ -56,19 +42,34 @@ export default function todo ({ main, msg, injection }) {
 		}
 	}
 
+	const clear = () => {
+		msg.dispatch('CLEAR')
+	}
+
 	const visibility = ({ params }) => {
 		const visibility = params.filter
 		msg.dispatch('VISIBILITY', { visibility })
 	}
+
+	const action = ( name ) => (e) => {
+		const { id } = getData(e.target)
+		msg.dispatch(name, { id })
+	}
+
+	const getData = (target) => {
+		const id = +target.dataset.id
+		const text = target.value
+		return { id, text }
+	}
 }
 
 // @View
-const filter = (by, todos) => {
+const visibility = (by, todos) => {
 	switch (by) {
 		case 'completed':
-			return todos.filter(item => item.completed)
+			return todos.filter( item => item.completed )
 		case 'active':
-			return todos.filter(item => !item.completed)
+			return todos.filter( item => !item.completed )
 		default:
 			return todos
 	}
@@ -77,30 +78,28 @@ const filter = (by, todos) => {
 // @Todo Factory
 const Todo = ({ text }) => ({
 	text,
-	id: Math.random() * Math.pow(10, 20),
-	completed: false,
-	edit: false
+	id			: Math.random() * Math.pow(10, 20),
+	completed	: false,
+	edit		: false
 })
 
 // @Model
 export const model = {
 	filter: 'all',
-	todos: []
+	todos : []
 }
 
 // @View
-export const view = (state) => {
-	return {
-		...state,
-		todos: filter(state.filter, state.todos)
-	}
-}
+export const view = ({ filter, todos }) => ({
+	filter,
+	todos: visibility( filter, todos )
+})
 
 // @Actions
 export const actions = {
 
 	ADD: (state, { text }) => ({
-		todos: state.todos.concat(Todo({ text }))
+		todos: state.todos.concat( Todo({ text }) )
 	}),
 
 	CLEAR: (state, payload) => ({
@@ -126,7 +125,7 @@ export const actions = {
 	}),
 
 	REMOVE: (state, { id }) => ({
-		todos: state.todos.filter(item => item.id !== id)
+		todos: state.todos.filter( item => item.id !== id )
 	}),
 
 	VISIBILITY: (state, { visibility }) => ({
