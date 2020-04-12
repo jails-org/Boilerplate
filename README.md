@@ -1,6 +1,6 @@
 # Static Boilerplate 
 <p align="center">
-	<img width="150" src="src/images/logo-stripes.png" />
+	<img width="150" src="assets/images/logo-stripes.png" />
 </p>
 
 ## A Simple Boilerplate for Static Applications
