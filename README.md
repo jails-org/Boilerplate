@@ -1,7 +1,7 @@
 # Ultimate Static Boilerplate 🚀⚡️  
-<p align="center">
+<!--<p align="center">
 	<img width="150" src="assets/images/logo-stripes.png" />
-</p>
+</p>-->
 
 ## Stack 
 - [Jails](https://github.com/Jails-org/Jails) ( Javascript )
