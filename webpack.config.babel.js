@@ -187,6 +187,12 @@ export default tasks()
 					]
 				},
 				{
+					test: /\.css$/,
+					use: [
+						'css-loader'
+					]
+				},
+				{
 					test: /\.(gif|png|jpe?g|svg)$/i,
 					use: [
 						{

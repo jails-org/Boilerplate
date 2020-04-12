@@ -2,14 +2,6 @@ include /components/image/index.pug
 
 mixin hello-world()
 
-	- const quote = Boilerplate.getData('quote')
-
-	section.hello-world( data-component="hello-world" )
-
-		div.hello-world__content
-
-			+image('logo.svg', { class: 'logo', alt :'Jails Logo' })
-
-			h1.display-4 Hello World
-
+	hello-world( image=require(`assets/images/logo.svg`) )&attributes(attributes)
+		slot
 			block
