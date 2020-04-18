@@ -1,38 +1,31 @@
 import style from './index.css'
+import { WebComponent, html, map } from '../webcomponent'
 
-export default class HelloWorld extends HTMLElement {
+export default class HelloWorld extends WebComponent {
 
-	constructor(){
-		super()
-		// this.root = this.attachShadow({ mode: 'open' })
+	static get observedAttributes(){
+		return ['image']
 	}
 
-	connectedCallback(){
-
-		const slot = this.querySelector('slot')
-
-		this.image = this.getAttribute('image')
-		this.slot = slot ? slot.innerHTML : ''
-
-		this.setState({
-			image 	: this.image,
-			slot 	: this.slot
-		})
+	onMount(){
+		const slot  = this.slot
+		const image = this.getAttribute('image')
+		this.setState({ image, slot })
 	}
 
-	setState( data ){
-		this.innerHTML = this.render( data )
-	}
-
-	render({ image, slot }){
-
-		return `
+	render({ image, slot }, attrs){
+		const items = [1, 2, 3]
+		return html`
 			<style>${style}</style>
 			<section class="hello-world">
 				<div class="hello-world__content">
 					<img class="logo" src="${image}" />
 					<h1>Hello World</h1>
-					${slot}
+					${ slot }
+					<h4>Iteration example</h4>
+					<ul>
+						${ map(items, i => html`<li>${i}</li>`) }
+					</ul>
 				</div>
 			</section>
 		`
