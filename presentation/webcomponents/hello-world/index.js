@@ -8,14 +8,20 @@ export default class HelloWorld extends HTMLElement {
 	}
 
 	connectedCallback(){
+
 		const slot = this.querySelector('slot')
+
 		this.image = this.getAttribute('image')
 		this.slot = slot ? slot.innerHTML : ''
-		this.update()
+
+		this.setState({
+			image 	: this.image,
+			slot 	: this.slot
+		})
 	}
 
-	update(){
-		this.innerHTML = this.render(this)
+	setState( data ){
+		this.innerHTML = this.render( data )
 	}
 
 	render({ image, slot }){
