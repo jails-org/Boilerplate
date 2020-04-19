@@ -5,36 +5,43 @@
 	display: flex;
 	padding: 0 25px;
 }
-h1 {
+
+.hello-world h1 {
 	font-size: 60px;
 	font-weight: 300;
 	margin: 15px 0 0;
 }
-blockquote {
+
+.hello-world blockquote {
 	margin: 15px 0;
 	font-size: 18px;
 	max-width: 550px;
 	line-height: 1.5;
 }
-a {
+
+.hello-world a {
 	display: inline-block;
 	margin: 0 10px;
 	color: #369;
 }
-.logo {
+
+.hello-world .logo {
 	width: 120px;
 	height: 120px;
 	margin: 10px 0;
 }
-.list {
+
+.hello-world .list {
 	display: flex;
 	justify-content: center;
 	height: 250px;
 }
-.list li {
+
+.hello-world .list li {
 	margin: 20px 10px 0px;
 }
-.list img {
+
+.hello-world .list img {
 	max-width: 100px;
 	border-radius: 50%;
 }
