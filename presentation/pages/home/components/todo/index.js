@@ -85,7 +85,7 @@ const Todo = ({ text }) => ({
 
 // @Model
 export const model = {
-	filter: 'all',
+	filter: '',
 	todos : []
 }
 

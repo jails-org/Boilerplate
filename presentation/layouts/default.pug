@@ -23,7 +23,8 @@ html
 	body
 
 		div.site( data-component=`application ${app}` )
-			block content
+			template
+				block content
 
 		+third-party()
 		+svg-sprite()
