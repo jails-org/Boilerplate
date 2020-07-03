@@ -29,7 +29,7 @@ If you export a function named as `mydata()`, it will be available as `API.mydat
 You define your routes in the `routes.js` file in the root of the project. It gets the API's reference so you can generate dynamic paths.
 
 The only required fields are:
-- `app` : Which is your entrypoint for Javascript and Css main file.
+- `page` : Which is your entrypoint for Javascript and Css main file.
 - `file`: Here you need to define where your html file will be generated.
 
 The routes object and its props will be available for pug templates in `routes` global variable and the current route will be available in `route` global variable.
@@ -50,7 +50,7 @@ All defined on `webpack.config.babel.js`:
 
 - `routes` : The collection result returned by the function exported in `routes.js`.
 - `route`  : The current route from the `routes` collection.
-- `app`    : The app entrypoint defined in the route definition file.
+- `page`    : The page entrypoint defined in the route definition file.
 
 - `process.env.NODE_ENV` : Environment variable from `package.json` script call.
 - `APPCONFIG` : The configuration props depending on which `ENV` variable was called on `package.json` script task, it will be either `production` or `development`.
@@ -68,4 +68,4 @@ Global functions to be used on `pug` files, all defined on `/tasks/globals.js`
 
 - Boilerplate.toJSON( JSONObject ) : Transforms a json to string, useful to be used on `data` attribute on HTMLElements.
 - Boilerplate.getData( String ) : Get the json object from a file in `/data` folder.
-- Boilerpate.getRoute( String ) : Get a route from a specific `app`.  Ex. Boilerplate.getRoute('home')
+- Boilerpate.getRoute( String ) : Get a route from a specific `page`.  Ex. Boilerplate.getRoute('home')

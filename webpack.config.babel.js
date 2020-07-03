@@ -93,11 +93,11 @@ export default tasks()
 			}),
 		].concat(
 			routes.map((route) => {
-				const { app, file } = route
+				const { page, file } = route
 				return new HtmlWebPackPlugin({
-					template: `${source}/pages/${app}/index.pug`,
+					template: `${source}/pages/${page}/index.pug`,
 					templateParameters: {
-						app,
+						page,
 						routes,
 						route
 					},

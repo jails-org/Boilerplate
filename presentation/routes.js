@@ -2,21 +2,21 @@ export default async ({ APIS }) => {
 
 	return [
 		{
-			app: 'home',
+			page: 'home',
 			path:'/',
 			file: 'index.html',
 			title: 'Home',
 			params: { isHome: true }
 		},
 		{
-			app: 'about',
+			page: 'about',
 			path: '/about',
 			file: 'about/index.html',
 			title: 'About',
 			params: { isAbout: true }
 		},
 		{
-			app: 'sample',
+			page: 'sample',
 			path: '/react-example',
 			file: 'react-example/index.html',
 			title: 'React Example',

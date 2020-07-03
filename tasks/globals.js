@@ -12,8 +12,8 @@ export default ({ routes }) => ({
 			return JSON.parse(fs.readFileSync(`./data/static/${name}.json`, 'utf-8'))
 		},
 
-		getRoute(app) {
-			return routes.find(r => r.app === app)
+		getRoute(page) {
+			return routes.find(r => r.page === page)
 		},
 
 		toTemplate(object, prefix = 'item') {

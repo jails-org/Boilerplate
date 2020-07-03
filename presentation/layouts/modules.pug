@@ -3,7 +3,7 @@ mixin dns-prefetch(list = ['https://fullstory.com/'])
 		link( rel="dns-prefetch" href=url )
 
 mixin style()
-	link( rel="stylesheet" href=`${site.assetsFolder}css/${app}.css?v=${site.hash}` )
+	link( rel="stylesheet" href=`${site.assetsFolder}css/${page}.css?v=${site.hash}` )
 
 mixin prevent-alert()
 	script(type="text/javascript").
@@ -24,7 +24,7 @@ mixin js()
 			}
 		})();
 	script(type="text/javascript" src=`${site.assetsFolder}js/main.js?v=${site.hash}` defer)
-	script(type="text/javascript" src=`${site.assetsFolder}js/${app}.js?v=${site.hash}` defer)
+	script(type="text/javascript" src=`${site.assetsFolder}js/${page}.js?v=${site.hash}` defer)
 
 mixin fonts()
 	script(type="text/javascript").
