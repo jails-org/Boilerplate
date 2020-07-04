@@ -2,6 +2,8 @@ include /components/image/index.pug
 
 mixin hello-world()
 
-	hello-world( image=require(`assets/images/logo.svg`) )&attributes(attributes)
+	- const image = require(`assets/images/logo.svg`).default
+
+	hello-world( image=image )&attributes(attributes)
 		slot
 			block

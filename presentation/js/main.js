@@ -1,11 +1,10 @@
-import jails from 'jails-js'
+import jails 		from 'jails-js'
+import HelloWorld 	from '../webcomponents/hello-world'
 import 'axios'
 
-import HelloWorld from '../webcomponents/hello-world'
-
-customElements.define('hello-world', HelloWorld)
-
 export default () => {
+
+	customElements.define('hello-world', HelloWorld)
 
 	process.env.NODE_ENV == 'development'
 		? jails.devStart()
