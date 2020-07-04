@@ -70,8 +70,8 @@ export default tasks()
 				new TerserPlugin({
 					parallel: true,
 					terserOptions: {
-						ecma: 6,
-					},
+						ecma: 6
+					}
 				}),
 				new OptimizeCSSAssetsPlugin({})
 			]
@@ -130,10 +130,10 @@ export default tasks()
 			}),
 			new webpack.DefinePlugin({
 				'process.env.NODE_ENV': JSON.stringify(mode),
-				'APPCONFIG': JSON.stringify(APPCONFIG),
-				'API': JSON.stringify(api),
+				'APPCONFIG'	 : JSON.stringify(APPCONFIG),
+				'API'		 : JSON.stringify(api),
 				'environment': JSON.stringify(mode),
-				'site': JSON.stringify({
+				'site'		 : JSON.stringify({
 					routes,
 					assetsFolder: `/${assetsFolder}`,
 					version: pack.version,
@@ -183,7 +183,7 @@ export default tasks()
 					use: [
 						MiniCssExtractPlugin.loader,
 						'css-loader',
-						'stylus-loader?paths[]=./presentation&resolve url'
+						'stylus-loader?paths[]=./node_modules&paths[]=./presentation&resolve url'
 					]
 				},
 				{

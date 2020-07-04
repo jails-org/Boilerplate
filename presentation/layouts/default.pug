@@ -6,14 +6,20 @@ include ./modules.pug
 html
 
 	head
+
 		title Boilerplate Jails | #{route.title}
 		meta( charset="UTF-8" )
 		meta( name="viewport" content="width=device-width, initial-scale=1" )
 		link( rel="icon" href="/assets/images/logo-stripes.png" )
-		link( rel="stylesheet" href="//bootswatch.com/4/materia/bootstrap.min.css" )
+
+		+dns-prefetch([
+			'https://www.google-analytics.com',
+			'https://ajax.googleapis.com',
+			'http://fonts.googleapis.com',
+			'http://fonts.gstatic.com'
+		])
 
 		+prevent-alert()
-		+dns-prefetch()
 		+style()
 		+js()
 		+fonts()
