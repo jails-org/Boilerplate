@@ -40,6 +40,8 @@ export default tasks()
 
 		mode,
 
+		devtool: isdev ? 'eval-source-map' : false,
+
 		entry: entryFiles.reduce(entries, {}),
 
 		output: {
