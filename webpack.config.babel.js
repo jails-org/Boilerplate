@@ -58,7 +58,36 @@ export default tasks()
 		},
 
 		devServer: {
-			overlay: true
+
+			overlay: true,
+
+			before(app, server, compiler){
+
+				app.locals.basedir = path.join(__dirname, 'presentation')
+				app.set('views', ['./presentation'])
+				app.set('view engine', 'pug')
+
+				routes.map( route => {
+					app.get(route.path, (req, res) => {
+						res.render(`pages/${route.page}/index`, {
+							APPCONFIG,
+							routes,
+							route,
+							require: (path) => ({ default: path }),
+							page: route.page,
+							'process.env.NODE_ENV': mode,
+							'API': api,
+							'environment': mode,
+							'site': {
+								routes,
+								assetsFolder: `/${assetsFolder}`,
+								version: pack.version,
+								hash: mode == 'production' ? generateHash() : pack.version
+							}
+						})
+					})
+				})
+			}
 		},
 
 		optimization: {
@@ -92,15 +121,11 @@ export default tasks()
 				chunkFilename: `${assetsFolder}css/[name].css`
 			}),
 		].concat(
-			routes.map((route) => {
+			isdev ? [] : routes.map((route) => {
 				const { page, file } = route
 				return new HtmlWebPackPlugin({
 					template: `${source}/pages/${page}/index.pug`,
-					templateParameters: {
-						page,
-						routes,
-						route
-					},
+					templateParameters: { page, routes, route },
 					filename: `./${file}`,
 					inject: false
 				})
@@ -207,6 +232,7 @@ export default tasks()
 			]
 		}
 	}
+
 })
 
 // Helpers
