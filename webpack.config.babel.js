@@ -64,6 +64,8 @@ export default tasks()
 			before(app, server, compiler){
 
 				app.locals.basedir = path.join(__dirname, 'presentation')
+				app.locals.pretty = true
+
 				app.set('views', ['./presentation'])
 				app.set('view engine', 'pug')
 

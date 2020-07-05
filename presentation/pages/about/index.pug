@@ -10,17 +10,19 @@ block head
 
 block content
 
-	+hello-world()(data-static)
+	+hello-world()
 
 		- const routeHome = Boilerplate.getRoute( 'home' )
 		- const routeSample = Boilerplate.getRoute('sample')
 		- const quote = Boilerplate.getData('quote')
 
-		blockquote #{quote.antoine.blockquote}
-		cite #{quote.antoine.cite}
+		template
 
-		p Visit:
-			a( href=routeHome.path ) /#{routeHome.title},
-			a( href=routeSample.path ) /#{routeSample.title}
+			blockquote #{quote.antoine.blockquote}
+			cite #{quote.antoine.cite}
+
+			p Visit:
+				a( href=routeHome.path ) /#{routeHome.title},
+				a( href=routeSample.path ) /#{routeSample.title}
 
 	+rickandmorty()
