@@ -110,21 +110,23 @@ export const thirdParty = (name) => {
 
 export const thirdPartyIframe = (name) => {
 
+	const hasIframe = document.getElementById('iframe-third-party')
+	const iframe = hasIframe ? hasIframe : document.createElement('iframe')
+
 	return new Promise((resolve) => {
 
 		const handler = () => {
 
-			const iframe = document.createElement('iframe')
 			const script = document.createElement('script')
 			const tp = document.querySelector(`script[data-name=${name}]`)
 
 			script.text = `(function(window, document){ ${tp.text} })(parent.window, parent.window.document)`
 			iframe.style.display = 'none'
 			iframe.src = 'about:blank'
+			iframe.id = 'iframe-third-party'
 
 			document.body.appendChild(iframe)
 			iframe.contentDocument.body.appendChild(script)
-
 			resolve( iframe.contentWindow )
 
 			window.removeEventListener('load', handler)
