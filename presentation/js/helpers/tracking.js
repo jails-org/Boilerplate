@@ -1,9 +1,15 @@
-import { thirdParty } from './utils'
+import { thirdPartyIframe } from './utils'
 
-const analytics = thirdParty('analytics')
+const analytics = thirdPartyIframe('analytics')
 
 export const trackPageView = () => {
-	analytics.then( _ => ga('send', 'pageview') )
+
+	const ua = APPCONFIG.analytics
+
+	analytics.then( _ => {
+		ga('create', ua, 'auto')
+		ga('send', 'pageview')
+	})
 }
 
 export const trackEvent = (...args) => {

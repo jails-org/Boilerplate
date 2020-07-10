@@ -107,3 +107,29 @@ export const thirdParty = (name) => {
 		resolve(script)
 	})
 }
+
+export const thirdPartyIframe = (name) => {
+
+	return new Promise((resolve) => {
+
+		const handler = () => {
+
+			const iframe = document.createElement('iframe')
+			const script = document.createElement('script')
+			const tp = document.querySelector(`script[data-name=${name}]`)
+
+			script.text = `(function(window, document){ ${tp.text} })(parent.window, parent.window.document)`
+			iframe.style.display = 'none'
+			iframe.src = 'about:blank'
+
+			document.body.appendChild(iframe)
+			iframe.contentDocument.body.appendChild(script)
+
+			resolve( iframe.contentWindow )
+
+			window.removeEventListener('load', handler)
+		}
+
+		window.addEventListener('load', handler)
+	})
+}
