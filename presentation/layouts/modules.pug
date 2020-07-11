@@ -15,6 +15,11 @@ mixin prevent-alert()
 		}
 
 mixin js()
+	+polyfills()
+	script(type="text/javascript" src=`${site.assetsFolder}js/main.js?v=${site.hash}` defer)
+	script(type="text/javascript" src=`${site.assetsFolder}js/${page}.js?v=${site.hash}` defer)
+
+mixin polyfills()
 	script(type="text/javascript").
 		!(function(){
 			if(!!window.navigator.userAgent.match(/Trident\/7\./)){
@@ -23,8 +28,6 @@ mixin js()
 				document.head.appendChild(script);
 			}
 		})();
-	script(type="text/javascript" src=`${site.assetsFolder}js/main.js?v=${site.hash}` defer)
-	script(type="text/javascript" src=`${site.assetsFolder}js/${page}.js?v=${site.hash}` defer)
 
 mixin fonts()
 	script(type="text/javascript").

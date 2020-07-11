@@ -18,9 +18,9 @@ import pack from './package.json'
 import tasks from './tasks'
 
 /* Source & Dist */
-const root = path.resolve(__dirname)
+const root 	 = path.resolve(__dirname)
 const source = path.resolve(__dirname, 'presentation')
-const dist = path.resolve(__dirname, 'dist')
+const dist 	 = path.resolve(__dirname, 'dist')
 
 /* Environment Modes */
 const mode = process.env.NODE_ENV || 'production'
@@ -61,26 +61,7 @@ export default tasks()
 		},
 
 		devServer: {
-
-			overlay: true,
-
-			before(app, server, compiler){
-
-				app.locals.basedir = path.join(__dirname)
-				app.locals.pretty = true
-
-				app.set('views', ['./presentation'])
-				app.set('view engine', 'pug')
-
-				routes.map( route => {
-					app.get(route.path, (req, res) => {
-						res.render(`pages/${route.page}/index`, {
-							...getPugConfig({ routes, route, api }),
-							require: (path) => ({ default: path })
-						})
-					})
-				})
-			}
+			overlay: true
 		},
 
 		optimization: {
@@ -114,7 +95,7 @@ export default tasks()
 				chunkFilename: `${assetsFolder}css/[name].css`
 			}),
 		].concat(
-			isdev ? [] : routes.map((route) => {
+			routes.map((route) => {
 				const { page, file } = route
 				return new HtmlWebPackPlugin({
 					template: `${source}/pages/${page}/index.pug`,
@@ -169,13 +150,13 @@ export default tasks()
 					test: /\.pug$/,
 					loader: 'pug-loader',
 					options: {
-						root,
+						root: source,
 						basedir: source,
 						pretty: isdev
 					}
 				},
 				{
-					test: /\.(js|jsx)$/,
+					test: /\.js$/,
 					exclude: /node_modules/,
 					loader: 'babel-loader'
 				},
@@ -240,8 +221,8 @@ function getPugConfig({ routes, route = {}, api }) {
 	return {
 		routes,
 		route,
-		page: route.page,
 		API: api,
+		page: route.page,
 		environment: mode,
 		site: {
 			routes,
