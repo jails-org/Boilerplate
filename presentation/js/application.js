@@ -1,4 +1,4 @@
-import { trackPageView, trackEvent } from 'js/helpers/tracking'
+import { trackPageView } from 'js/helpers/tracking'
 
 export default async function application ({ main, injection, render }) {
 

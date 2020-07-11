@@ -8,6 +8,7 @@ export default async ({ APIS }) => {
 			title: 'Home',
 			params: { isHome: true }
 		},
+
 		{
 			page: 'about',
 			path: '/about',

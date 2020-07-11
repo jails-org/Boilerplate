@@ -1,5 +1,6 @@
-import jails 		from 'jails-js'
-import HelloWorld 	from '../webcomponents/hello-world'
+import jails 	  from 'jails-js'
+import HelloWorld from '../webcomponents/hello-world'
+
 import 'axios'
 
 export default () => {
