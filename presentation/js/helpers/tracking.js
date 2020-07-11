@@ -4,10 +4,8 @@ const analytics = thirdPartyIframe('analytics')
 
 export const trackPageView = () => {
 
-	const ua = APPCONFIG.analytics
-
 	analytics.then( _ => {
-		ga('create', ua, 'auto')
+		ga('create', APPCONFIG.analytics, 'auto')
 		ga('send', 'pageview')
 	})
 }
