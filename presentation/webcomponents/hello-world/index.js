@@ -8,9 +8,8 @@ export default class HelloWorld extends WebComponent {
 	}
 
 	onMount(){
-		const slot  = this._slot
 		const image = this.getAttribute('image')
-		this.setState({ image, slot })
+		this.setState({ image })
 	}
 
 	render({ image, slot }, attrs){

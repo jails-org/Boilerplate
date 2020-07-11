@@ -4,8 +4,8 @@ export class WebComponent extends HTMLElement {
 	constructor() {
 		super()
 		const slot = this.querySelector('slot')
-		this.state = {}
 		this._slot  = slot ? slot.innerHTML : ''
+		this.state = { slot: this._slot }
 	}
 
 	setState( data = {} ) {
