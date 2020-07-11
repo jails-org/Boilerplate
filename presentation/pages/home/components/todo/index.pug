@@ -14,14 +14,13 @@ mixin todo()
 						input.form-control( type="text" placeholder="Add a new Todo" name="text" autocomplete="off" data-static )
 
 				template
-					div.row.justify-content-center.mb-4
-						ul.nav.nav-pills
-							li.col.nav-item
-								a.nav-link(href="#/all" v-class="filter == 'all'? 'active' :''") All
-							li.col.nav-item
-								a.nav-link(href="#/active" v-class="filter == 'active'? 'active' :''") Active
-							li.col.nav-item
-								a.nav-link(href="#/completed" v-class="filter == 'completed'? 'active' :''") Completed
+					ul.nav.nav-pills.justify-content-center.mb-4
+						li.nav-item
+							a.nav-link(href="#/all" v-class="filter == 'all'? 'active' :''") All
+						li.nav-item
+							a.nav-link(href="#/active" v-class="filter == 'active'? 'active' :''") Active
+						li.nav-item
+							a.nav-link(href="#/completed" v-class="filter == 'completed'? 'active' :''") Completed
 
 					ul.list-group
 

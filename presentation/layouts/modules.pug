@@ -1,6 +1,6 @@
-mixin dns-prefetch(list = ['https://fullstory.com/'])
+mixin preconnect(list = ['https://fullstory.com/'])
 	each url in list
-		link( rel="dns-prefetch" href=url )
+		link( rel="preconnect" href=url )
 
 mixin style()
 	link( rel="stylesheet" href=`${site.assetsFolder}css/${page}.css?v=${site.hash}` )
@@ -15,6 +15,11 @@ mixin prevent-alert()
 		}
 
 mixin js()
+	+polyfills()
+	script(type="text/javascript" src=`${site.assetsFolder}js/main.js?v=${site.hash}` defer)
+	script(type="text/javascript" src=`${site.assetsFolder}js/${page}.js?v=${site.hash}` defer)
+
+mixin polyfills()
 	script(type="text/javascript").
 		!(function(){
 			if(!!window.navigator.userAgent.match(/Trident\/7\./)){
@@ -23,8 +28,6 @@ mixin js()
 				document.head.appendChild(script);
 			}
 		})();
-	script(type="text/javascript" src=`${site.assetsFolder}js/main.js?v=${site.hash}` defer)
-	script(type="text/javascript" src=`${site.assetsFolder}js/${page}.js?v=${site.hash}` defer)
 
 mixin fonts()
 	script(type="text/javascript").
@@ -42,7 +45,6 @@ mixin third-party()
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-		ga('create', '#{APPCONFIG.analytics}', 'auto');
 
 mixin log( variable )
 	script.

@@ -9,7 +9,7 @@
     "test:unit": "mocha --require @babel/register ./**/spec.js",
     "test:integration": "cypress open",
     "typecheck": "tsc --allowJs --checkJs --noEmit ./**/*.js",
-    "server": "yarn build && cd dist && python -m SimpleHTTPServer 3000"
+    "server": "yarn build && cd dist && python ../server.py --port=3000"
   },
   "keywords": [],
   "dependencies": {

@@ -18,8 +18,9 @@ import pack from './package.json'
 import tasks from './tasks'
 
 /* Source & Dist */
+const root 	 = path.resolve(__dirname)
 const source = path.resolve(__dirname, 'presentation')
-const dist = path.resolve(__dirname, 'dist')
+const dist 	 = path.resolve(__dirname, 'dist')
 
 /* Environment Modes */
 const mode = process.env.NODE_ENV || 'production'
@@ -36,9 +37,11 @@ const assetsFolder = '' // E.g: assets/
 export default tasks()
 	.then( ([api, routes]) => {
 
-	return {
+	const config = {
 
 		mode,
+
+		devtool: isdev ? 'eval-source-map' : false,
 
 		entry: entryFiles.reduce(entries, {}),
 
@@ -96,11 +99,7 @@ export default tasks()
 				const { page, file } = route
 				return new HtmlWebPackPlugin({
 					template: `${source}/pages/${page}/index.pug`,
-					templateParameters: {
-						page,
-						routes,
-						route
-					},
+					templateParameters: getPugConfig({ routes, route, api }),
 					filename: `./${file}`,
 					inject: false
 				})
@@ -129,16 +128,8 @@ export default tasks()
 				}
 			}),
 			new webpack.DefinePlugin({
+				APPCONFIG: JSON.stringify(APPCONFIG),
 				'process.env.NODE_ENV': JSON.stringify(mode),
-				'APPCONFIG'	 : JSON.stringify(APPCONFIG),
-				'API'		 : JSON.stringify(api),
-				'environment': JSON.stringify(mode),
-				'site'		 : JSON.stringify({
-					routes,
-					assetsFolder: `/${assetsFolder}`,
-					version: pack.version,
-					hash: mode == 'production' ? generateHash() : pack.version
-				})
 			}),
 			new webpack.LoaderOptionsPlugin({
 				test: /\.styl$/,
@@ -165,7 +156,7 @@ export default tasks()
 					}
 				},
 				{
-					test: /\.(js|jsx)$/,
+					test: /\.js$/,
 					exclude: /node_modules/,
 					loader: 'babel-loader'
 				},
@@ -207,6 +198,9 @@ export default tasks()
 			]
 		}
 	}
+
+	return config
+
 })
 
 // Helpers
@@ -221,4 +215,20 @@ function entries(acc, file) {
 function generateHash(){
 	return Math.random().toString(36).substring(2, 15) +
 		Math.random().toString(36).substring(2, 15)
+}
+
+function getPugConfig({ routes, route = {}, api }) {
+	return {
+		routes,
+		route,
+		API: api,
+		page: route.page,
+		environment: mode,
+		site: {
+			routes,
+			assetsFolder: `/${assetsFolder}`,
+			version: pack.version,
+			hash: mode == 'production' ? generateHash() : pack.version
+		}
+	}
 }

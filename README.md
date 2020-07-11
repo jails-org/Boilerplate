@@ -8,7 +8,6 @@
 - [Pug](https://github.com/pugjs) ( Html )
 - [Stylus](https://github.com/stylus/stylus) ( Css )
 - [Webpack 4](https://webpack.js.org/) ( Bundler )
-- [Reactjs](https://reactjs.org/) (Optional)
 - [CustomElements](https://developers.google.com/web/fundamentals/web-components/customelements)
 
 ## Development
