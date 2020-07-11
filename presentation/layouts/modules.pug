@@ -1,6 +1,6 @@
-mixin dns-prefetch(list = ['https://fullstory.com/'])
+mixin preconnect(list = ['https://fullstory.com/'])
 	each url in list
-		link( rel="dns-prefetch" href=url )
+		link( rel="preconnect" href=url )
 
 mixin style()
 	link( rel="stylesheet" href=`${site.assetsFolder}css/${page}.css?v=${site.hash}` )

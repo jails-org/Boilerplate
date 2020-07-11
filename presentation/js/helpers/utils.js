@@ -123,7 +123,7 @@ export const thirdPartyIframe = (name) => {
 			script.text = `(function(window, document){ ${tp.text} })(parent.window, parent.window.document)`
 			iframe.style.display = 'none'
 			iframe.src = 'about:blank'
-			iframe.id = 'iframe-third-party'
+			iframe.id  = 'iframe-third-party'
 
 			document.body.appendChild(iframe)
 			iframe.contentDocument.body.appendChild(script)
