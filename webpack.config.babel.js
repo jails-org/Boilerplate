@@ -18,6 +18,7 @@ import pack from './package.json'
 import tasks from './tasks'
 
 /* Source & Dist */
+const root = path.resolve(__dirname)
 const source = path.resolve(__dirname, 'presentation')
 const dist = path.resolve(__dirname, 'dist')
 
@@ -65,7 +66,7 @@ export default tasks()
 
 			before(app, server, compiler){
 
-				app.locals.basedir = path.join(__dirname, 'presentation')
+				app.locals.basedir = path.join(__dirname)
 				app.locals.pretty = true
 
 				app.set('views', ['./presentation'])
@@ -188,7 +189,7 @@ export default tasks()
 					test: /\.pug$/,
 					loader: 'pug-loader',
 					options: {
-						root: source,
+						root,
 						basedir: source,
 						pretty: isdev
 					}

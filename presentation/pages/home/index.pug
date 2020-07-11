@@ -1,7 +1,8 @@
-extends /layouts/default.pug
+extends /presentation/layouts/default.pug
 
-include /components/hello-world/index.pug
 include ./components/todo/index.pug
+include /presentation/components/hello-world/index.pug
+include /node_modules/cards-design-system/components/header/index.pug
 
 block head
 	+log( route.params )
