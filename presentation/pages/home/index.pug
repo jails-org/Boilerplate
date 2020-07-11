@@ -12,7 +12,6 @@ block content
 	+hello-world()
 
 		- const routeAbout = Boilerplate.getRoute('about')
-		- const routeSample = Boilerplate.getRoute('sample')
 		- const quote = Boilerplate.getData('quote')
 
 		blockquote #{quote.davinci.blockquote}
@@ -20,6 +19,5 @@ block content
 
 		p Visit :
 			a( href=routeAbout.path ) /#{routeAbout.title},
-			a( href=routeSample.path ) /#{routeSample.title}
 
 	+todo()

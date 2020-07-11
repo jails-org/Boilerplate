@@ -13,7 +13,6 @@ block content
 	+hello-world()
 
 		- const routeHome = Boilerplate.getRoute( 'home' )
-		- const routeSample = Boilerplate.getRoute('sample')
 		- const quote = Boilerplate.getData('quote')
 
 		template
@@ -23,6 +22,5 @@ block content
 
 			p Visit:
 				a( href=routeHome.path ) /#{routeHome.title},
-				a( href=routeSample.path ) /#{routeSample.title}
 
 	+rickandmorty()
