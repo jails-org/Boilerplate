@@ -1,13 +1,27 @@
+
 .rickandmorty
 
-	display flex
-	flex-wrap wrap
-	align-items flex-start
+	$gutter = 10px
 
-	li
-		margin 5px
-		width 85px
-		height 85px
+	display grid
+
+	grid-template-rows auto
+	grid-column-gap $gutter
+	grid-row-gap $gutter
+
+	justify-content start
+	align-items end
+
+	+below( $mobile )
+		grid-template-columns repeat(2, auto)
+
+	+between( $mobile, $tablet )
+		grid-template-columns repeat(3, auto)
+
+	+above( $tablet )
+		grid-template-columns repeat(4, auto)
+		li:nth-child(1)
+			grid-column 1/3
 
 	img
 		width 100%

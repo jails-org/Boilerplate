@@ -3,3 +3,27 @@
    ========================================================================== */
 torem(value)
 	return unit((value / 10), rem)
+
+/**
+* @Grid Function
+* @Inspired by : https://gist.github.com/jefflau/ae36e3444c2ce43f79a0
+* @Usage :
+*	grid(1/4) // Container will have 4 columns using its childrens
+*   grid(1/4, 20px) // Container will have 4 columns and a gutter with 20px
+*   grid(1/4, 5%) // Container will have 4 columns and 5% of gutter
+*/
+
+grid( $ratio, $gutter = 0px )
+	display flex
+	flex-wrap wrap
+	margin-right (- $gutter)
+	margin-bottom (- $gutter)
+	&
+		> *
+			grid-col( $ratio, $gutter )
+
+grid-col( $ratio, $gutter = 0px )
+	flex-basis 100%
+	max-width "calc( %s - %s )" % (percentage($ratio)  $gutter)
+	margin-right $gutter
+	margin-bottom $gutter
