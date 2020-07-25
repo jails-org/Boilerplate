@@ -12,13 +12,13 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin'
 import ImageminPlugin from 'imagemin-webpack-plugin'
 import SVGSpritemapPlugin from 'svg-spritemap-webpack-plugin'
+import CopyPlugin from 'copy-webpack-plugin'
 
 /* Local Packages */
 import pack from './package.json'
 import tasks from './tasks'
 
 /* Source & Dist */
-const root 	 = path.resolve(__dirname)
 const source = path.resolve(__dirname, 'presentation')
 const dist 	 = path.resolve(__dirname, 'dist')
 
@@ -142,6 +142,12 @@ export default tasks()
 				options: {
 					context: __dirname
 				}
+			}),
+			new CopyPlugin({
+				patterns: [
+					{ from: 'robots.txt', to: 'dist/robots.txt' },
+					{ from: 'site.webmanifest', to: 'dist/site.webmanifest' }
+				]
 			})
 		),
 		module: {
