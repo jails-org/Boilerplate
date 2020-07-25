@@ -145,8 +145,8 @@ export default tasks()
 			}),
 			new CopyPlugin({
 				patterns: [
-					{ from: 'robots.txt', to: 'dist/robots.txt' },
-					{ from: 'site.webmanifest', to: 'dist/site.webmanifest' }
+					{ from: 'robots.txt', to: 'robots.txt' },
+					{ from: 'site.webmanifest', to: 'site.webmanifest' }
 				]
 			})
 		),
