@@ -176,17 +176,11 @@ export default tasks()
 					]
 				},
 				{
-					test: /\.styl$/,
+					test: /\.(styl|css)$/,
 					use: [
 						MiniCssExtractPlugin.loader,
 						'css-loader',
-						'stylus-loader?paths[]=./node_modules&paths[]=./presentation&resolve url'
-					]
-				},
-				{
-					test: /\.css$/,
-					use: [
-						'css-loader'
+						'stylus-loader?paths[]=./node_modules&paths[]=./presentation&resolve url&include css'
 					]
 				},
 				{
