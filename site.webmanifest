@@ -1,10 +1,16 @@
 {
   "short_name": "boilerplate",
   "name": "ultimate-boilerplate",
+  "display": "standalone",
   "icons": [{
-    "src": "assets/images/logo-stripes.png",
+    "src": "/assets/images/logo.svg",
     "type": "image/svg",
-    "sizes": "192x192"
+    "sizes": "144x144"
+	},
+	{
+	"src": "/assets/images/logo.png",
+	"type": "image/png",
+	"sizes": "144x144"
   }],
   "start_url": "/?utm_source=homescreen",
   "background_color": "#fafafa",

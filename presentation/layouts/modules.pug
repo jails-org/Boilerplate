@@ -61,6 +61,6 @@ mixin svg-sprite()
 				wrapper.style.display = 'none';
 				document.body.insertBefore(wrapper, document.body.childNodes[0]);
 			};
-			request.open("GET", '#{site.assetsFolder}icons/sprite.svg?#{site.hash}', true);
+			request.open("GET", '#{site.assetsFolder}icons/sprite.svg?v=#{site.hash}', true);
 			request.send();
 		})();

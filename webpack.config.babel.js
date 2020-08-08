@@ -13,6 +13,7 @@ import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin'
 import ImageminPlugin from 'imagemin-webpack-plugin'
 import SVGSpritemapPlugin from 'svg-spritemap-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
+import { InjectManifest, GenerateSW } from 'workbox-webpack-plugin'
 
 /* Local Packages */
 import pack from './package.json'
@@ -113,7 +114,7 @@ export default tasks()
 					minify: true,
 					extract: true,
 					width: 1280,
-					height: 1080,
+					height: 1980,
 					penthouse: {
 						blockJSRequests: false
 					}
@@ -130,6 +131,12 @@ export default tasks()
 			new webpack.DefinePlugin({
 				APPCONFIG: JSON.stringify(APPCONFIG),
 				'process.env.NODE_ENV': JSON.stringify(mode),
+				site: JSON.stringify({
+					routes,
+					assetsFolder: `/${assetsFolder}`,
+					version: pack.version,
+					hash: mode == 'production' ? generateHash() : pack.version
+				})
 			}),
 			new webpack.LoaderOptionsPlugin({
 				test: /\.styl$/,
@@ -148,6 +155,9 @@ export default tasks()
 					{ from: 'robots.txt', to: 'robots.txt' },
 					{ from: 'site.webmanifest', to: 'site.webmanifest' }
 				]
+			}),
+			new InjectManifest({
+				swSrc: `${source}/js/sw.js`
 			})
 		),
 		module: {
