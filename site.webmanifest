@@ -3,12 +3,7 @@
   "name": "ultimate-boilerplate",
   "display": "standalone",
   "icons": [{
-    "src": "/assets/images/logo.svg",
-    "type": "image/svg",
-    "sizes": "144x144"
-	},
-	{
-	"src": "/assets/images/logo.png",
+	"src": "images/logo.png",
 	"type": "image/png",
 	"sizes": "144x144"
   }],
