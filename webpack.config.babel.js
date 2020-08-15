@@ -102,7 +102,15 @@ export default tasks()
 					template: `${source}/pages/${page}/index.pug`,
 					templateParameters: getPugConfig({ routes, route, api }),
 					filename: `./${file}`,
-					inject: false
+					inject: false,
+					minify: isdev ? false : {
+						collapseWhitespace: true,
+						removeComments: true,
+						removeRedundantAttributes: false,
+						removeScriptTypeAttributes: true,
+						removeStyleLinkTypeAttributes: true,
+						useShortDoctype: true
+					}
 				})
 			}),
 			isdev ? [] : routes.map(({ file }) => {
@@ -168,7 +176,7 @@ export default tasks()
 					options: {
 						root: source,
 						basedir: source,
-						pretty: isdev
+						pretty: true
 					}
 				},
 				{
