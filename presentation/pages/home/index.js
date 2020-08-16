@@ -1,6 +1,6 @@
 import main  from 'js/main'
 import jails from 'jails-js'
-import store from 'stores'
+import store from 'data/stores'
 import Router from 'jails.packages/router'
 
 // @Components

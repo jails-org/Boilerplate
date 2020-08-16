@@ -11,9 +11,10 @@ export default () => {
 		? jails.devStart()
 		: jails.start()
 
-	if ('serviceWorker' in navigator) {
-		window.addEventListener('load', () => {
-			navigator.serviceWorker.register('/sw.js')
-		})
-	}
+	// Uncomment to unleash PWA features
+	// if ('serviceWorker' in navigator) {
+	// 	window.addEventListener('load', () => {
+	// 		navigator.serviceWorker.register('/sw.js')
+	// 	})
+	// }
 }

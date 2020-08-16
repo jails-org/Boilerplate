@@ -1,6 +1,6 @@
 import storage from 'jails.packages/storage'
 import { pandora, log } from 'jails.packages/pandora'
-import { getCharacters } from '../../data/services/sample'
+import { getCharacters } from '../services/sample'
 
 const KEY = 'STORE'
 const isDev = process.env.NODE_ENV == 'development'
