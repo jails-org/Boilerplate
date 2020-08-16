@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=development ENV=dev webpack-dev-server --port 3000 --host 0.0.0.0",
     "build": "NODE_ENV=production webpack",
-    "test:unit": "mocha --require @babel/register ./**/spec.js",
+    "test:unit": "mocha --require @babel/register ./tests/unit/**/*.test.js",
     "test:integration": "cypress open",
     "typecheck": "tsc --allowJs --checkJs --noEmit ./**/*.js",
     "server": "yarn build && cd dist && python ../server.py --port=3000"
