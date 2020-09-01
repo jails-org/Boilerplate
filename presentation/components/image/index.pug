@@ -1,2 +1,4 @@
+
 mixin image( url, attrs )
-	img( src=require(`assets/images/${url}`).default class="image" )&attributes(attrs)
+	- const src = require(`assets/images/${url}`).default
+	img( src=src class="image" )&attributes(attrs)
