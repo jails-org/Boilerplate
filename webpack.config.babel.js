@@ -13,7 +13,7 @@ import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin'
 import ImageminPlugin from 'imagemin-webpack-plugin'
 import SVGSpritemapPlugin from 'svg-spritemap-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
-import { InjectManifest, GenerateSW } from 'workbox-webpack-plugin'
+// import { InjectManifest, GenerateSW } from 'workbox-webpack-plugin'
 
 /* Local Packages */
 import pack from './package.json'
@@ -35,8 +35,7 @@ global.APPCONFIG = require('./appconfig')[config]
 
 const assetsFolder = '' // E.g: assets/
 
-export default tasks()
-	.then( ([api, routes]) => {
+export default tasks().then( ([api, routes]) => {
 
 	const config = {
 
@@ -164,9 +163,10 @@ export default tasks()
 					{ from: 'site.webmanifest', to: 'site.webmanifest' }
 				]
 			}),
-			new InjectManifest({
-				swSrc: `${source}/js/sw.js`
-			})
+			// Uncomment for PWA features
+			// new InjectManifest({
+			// 	swSrc: `${source}/js/sw.js`
+			// })
 		),
 		module: {
 			rules: [
@@ -213,8 +213,8 @@ export default tasks()
 						{
 							loader: 'file-loader',
 							options: {
-								outputPath: `${assetsFolder}images/`,
-								name: file => file.split(`/images/`).pop()
+								outputPath: assetsFolder + 'images/',
+								name: file => file.split('/images/').pop()
 							}
 						}
 					]
