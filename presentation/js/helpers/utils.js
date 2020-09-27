@@ -103,35 +103,9 @@ export const observe = (elm, { keepAlive, intersectionRatio = 0 } = {}) => {
 export const thirdParty = (name) => {
 	return new Promise((resolve) => {
 		const script = document.querySelector(`script[data-name=${name}]`)
-		eval(script.text)
-		resolve(script)
-	})
-}
-
-export const thirdPartyIframe = (name) => {
-
-	const hasIframe = document.getElementById('iframe-third-party')
-	const iframe = hasIframe ? hasIframe : document.createElement('iframe')
-
-	return new Promise((resolve) => {
-
-		const handler = () => {
-
-			const script = document.createElement('script')
-			const tp = document.querySelector(`script[data-name=${name}]`)
-
-			script.text = `(function(window, document){ ${tp.text} })(parent.window, parent.window.document)`
-			iframe.style.display = 'none'
-			iframe.src = 'about:blank'
-			iframe.id  = 'iframe-third-party'
-
-			document.body.appendChild(iframe)
-			iframe.contentDocument.body.appendChild(script)
-			resolve( iframe.contentWindow )
-
-			window.removeEventListener('load', handler)
-		}
-
-		window.addEventListener('load', handler)
+		setTimeout( _ => {
+			eval(script.text)
+			resolve(script)
+		}, 3000)
 	})
 }

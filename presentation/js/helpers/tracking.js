@@ -1,6 +1,6 @@
-import { thirdPartyIframe } from './utils'
+import { thirdParty } from './utils'
 
-const analytics = thirdPartyIframe('analytics')
+const analytics = thirdParty('analytics')
 
 export const trackPageView = () => {
 
