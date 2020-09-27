@@ -14,7 +14,7 @@ cleanupOutdatedCaches()
 precacheAndRoute([
 	{ url: '/', revision: null },
 	{ url: '/about', revision: null },
-	{ url: `/site.webmanifest`, revision: null }
+	{ url: '/site.webmanifest', revision: null }
 ])
 
 registerRoute(
