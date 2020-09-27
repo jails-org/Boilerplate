@@ -1,12 +1,18 @@
 import assert from 'assert'
+import { model, actions } from '../../presentation/pages/home/components/todo'
 
-describe('Example', () => {
+describe('COMPONENT/TODO', () => {
 
-	describe('Testing example', () => {
+	describe('CRUD', () => {
 
-		it('Should be true', () => {
-			assert.equal(true, true)
+		// TESTING
+		it('Should be able to push a new item', () => {
+
+			const text = 'Hello World!!!'
+			const { todos } = actions.ADD(model, { text })
+			const item = todos[0]
+
+			assert.equal(item.text, text)
 		})
-
 	})
 })
