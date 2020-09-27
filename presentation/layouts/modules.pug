@@ -16,6 +16,8 @@ mixin prevent-alert()
 
 mixin js()
 	+polyfills()
+	script(type="text/javascript").
+		var Page = Object.assign({}, !{JSON.stringify(route)});
 	script(type="text/javascript" src=`${site.assetsFolder}js/main.js?v=${site.hash}` defer)
 	script(type="text/javascript" src=`${site.assetsFolder}js/${page}.js?v=${site.hash}` defer)
 

@@ -1,6 +1,5 @@
 import storage from 'jails.packages/storage'
 import { pandora, log } from 'jails.packages/pandora'
-import { getCharacters } from '../services/sample'
 
 const KEY = 'STORE'
 const isDev = process.env.NODE_ENV == 'development'
@@ -21,23 +20,13 @@ export default () => {
 
 //@Model
 const model = {
-	loading :false,
-	items 	:[]
+	characters: []
 }
 
 //@Actions
 const actions = {
 
-	FETCH: (state, payload, {dispatch}) => {
-		getCharacters([ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 ])
-			.then( items => dispatch('RENDER_ITEMS', { items }))
-		return {
-			loading: true
-		}
-	},
-
-	RENDER_ITEMS: (state, {items}) => ({
-		items,
-		loading : false
+	SAVE_CHARACTERS: (state, { characters }) => ({
+		characters
 	})
 }

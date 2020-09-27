@@ -1,24 +1,12 @@
 import { trackPageView } from 'js/helpers/tracking'
 
-export default async function application ({ main, injection, render }) {
-
-	const { store } = injection
+export default async function application ({ main }) {
 
 	main( _ => [
-		events,
-		pageload
+		trackpage
 	])
 
-	const events = () => {
-		store.subscribe( render )
-	}
-
-	const pageload = () => {
+	const trackpage = () => {
 		trackPageView()
 	}
-
-}
-
-export const model = {
-	loading: false
 }

@@ -10,8 +10,8 @@ export default function todo ({ main, msg, injection }) {
 
 	const events = ({ on }) => {
 		on('submit', '.add', add)
-		on('click', '.clear', clear)
 		on('blur', 'li .form-control', save)
+		on('click', '.clear', clear)
 		on('click', '.remove', action('REMOVE'))
 		on('dblclick', 'label', action('EDIT'))
 		on('change', '.check', action('TOGGLE'))

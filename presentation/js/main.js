@@ -5,11 +5,12 @@ import 'axios'
 
 export default () => {
 
-	customElements.define('hello-world', HelloWorld)
-
 	process.env.NODE_ENV == 'development'
 		? jails.devStart()
 		: jails.start()
+
+	// All web components should be defined after jails start
+	customElements.define('hello-world', HelloWorld)
 
 	// Uncomment to unleash PWA features
 	// if ('serviceWorker' in navigator) {
