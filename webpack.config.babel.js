@@ -11,6 +11,7 @@ import HtmlWebPackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin'
 import ImageminPlugin from 'imagemin-webpack-plugin'
+import imageminMozjpeg from 'imagemin-mozjpeg'
 import SVGSpritemapPlugin from 'svg-spritemap-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 // import { InjectManifest, GenerateSW } from 'workbox-webpack-plugin'
@@ -133,7 +134,12 @@ export default tasks().then( ([api, routes]) => {
 				test: /\.(jpe?g|png|gif)$/i,
 				pngquant: {
 					quality: '95-100'
-				}
+				},
+				plugins: [
+					imageminMozjpeg({
+						quality: 80
+					})
+				]
 			}),
 			new webpack.DefinePlugin({
 				APPCONFIG: JSON.stringify(APPCONFIG),
