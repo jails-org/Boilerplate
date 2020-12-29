@@ -4,7 +4,7 @@ export const required = ({ value, data, fields }) => {
 }
 
 export const name = ({ value, data, fields }) => {
-	return value.split(/\s/).length > 2
+	return value.split(/\s/).length > 1
 }
 
 export const email = ({ value, data, fields }) => {
