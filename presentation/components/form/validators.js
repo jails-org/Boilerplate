@@ -1,16 +1,14 @@
-import name_ from 'rv-utils/build/validators/name'
-import email_ from 'rv-utils/build/validators/email'
 
 export const required = ({ value, data, fields }) => {
 	return Boolean(value.trim())
 }
 
 export const name = ({ value, data, fields }) => {
-	return name_(value)
+	return value.split(/\s/).length > 2
 }
 
 export const email = ({ value, data, fields }) => {
-	return email_(value)
+	return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(value)
 }
 
 export const minAge = ({ value, data, fields }) => {
