@@ -14,7 +14,6 @@ import ImageminPlugin from 'imagemin-webpack-plugin'
 import imageminMozjpeg from 'imagemin-mozjpeg'
 import SVGSpritemapPlugin from 'svg-spritemap-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
-// import { InjectManifest, GenerateSW } from 'workbox-webpack-plugin'
 
 /* Local Packages */
 import pack from './package.json'
@@ -53,7 +52,7 @@ export default tasks().then( ([api, routes]) => {
 		},
 
 		resolve: {
-			extensions: ['*', '.js', '.jsx'],
+			extensions: ['*', '.js'],
 			modules: [
 				source,
 				path.resolve(__dirname),
@@ -142,8 +141,8 @@ export default tasks().then( ([api, routes]) => {
 				]
 			}),
 			new webpack.DefinePlugin({
-				APPCONFIG: JSON.stringify(APPCONFIG),
 				'process.env.NODE_ENV': JSON.stringify(mode),
+				APPCONFIG: JSON.stringify(APPCONFIG),
 				site: JSON.stringify({
 					routes,
 					assetsFolder: `/${assetsFolder}`,
@@ -165,14 +164,9 @@ export default tasks().then( ([api, routes]) => {
 			}),
 			new CopyPlugin({
 				patterns: [
-					{ from: 'robots.txt', to: 'robots.txt' },
-					{ from: 'site.webmanifest', to: 'site.webmanifest' }
+					{ from: 'robots.txt', to: 'robots.txt' }
 				]
-			}),
-			// Uncomment for PWA features
-			// new InjectManifest({
-			// 	swSrc: `${source}/js/sw.js`
-			// })
+			})
 		),
 		module: {
 			rules: [

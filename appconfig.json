@@ -2,6 +2,7 @@
 
 	"development": {
 		"analytics" :"UA-XXXXX-Y",
+		"segment" :"XXXXXXXXXXXXXX",
 		"endpoints": {
 			"rickandmorty": "https://rickandmortyapi.com/api"
 		}
@@ -9,6 +10,7 @@
 
 	"production": {
 		"analytics": "UA-XXXXX-Y",
+		"segment" :"YYYYYYYYYYYYYY",
 		"endpoints": {
 			"rickandmorty": "https://rickandmortyapi.com/api"
 		}

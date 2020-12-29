@@ -12,13 +12,13 @@
 	justify-content start
 	align-items end
 
-	+below( $mobile )
+	+below('mobile')
 		grid-template-columns repeat(2, auto)
 
-	+between( $mobile, $tablet )
+	+between('mobile', 'tablet')
 		grid-template-columns repeat(3, auto)
 
-	+above( $tablet )
+	+above('tablet')
 		grid-template-columns repeat(4, auto)
 		li:nth-child(1)
 			grid-column 1/3

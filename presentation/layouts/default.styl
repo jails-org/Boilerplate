@@ -1,5 +1,4 @@
-
-@require '~bootswatch/dist/materia/bootstrap.min.css'
+@require '~bootswatch/dist/cosmo/bootstrap.min.css'
 @require 'styles/main'
 
 body
@@ -7,9 +6,24 @@ body
 	align-items center
 	height 100vh
 	justify-content center
-	animation fadein 1s
+
+	&.out
+		.site
+			animation fadeout .5s forwards
+		.main-loading
+			display block
+
+	.site
+		animation fadein 1s
+
+.main-loading
+	position absolute
+	right 20px
+	top 20px
+	display none
 
 .site
 	grid( 1/2 )
 	width 75%
 	align-items center
+	position relative

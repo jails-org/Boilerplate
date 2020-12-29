@@ -6,7 +6,7 @@ context('Application', () => {
 		cy.visit('http://localhost:3000/')
 	})
 
-  // https://on.cypress.io/interacting-with-elements
+	// https://on.cypress.io/interacting-with-elements
 
 	it('Todo@Add - Add a Item in the Todo list', () => {
 

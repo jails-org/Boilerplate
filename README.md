@@ -1,27 +1,55 @@
-# Ultimate Static Boilerplate 🚀⚡️  
 
-## Stack 
-- [Jails](https://github.com/Jails-org/Jails) ( Javascript )
-- [Pug](https://github.com/pugjs) ( Html )
-- [Stylus](https://github.com/stylus/stylus) ( Css )
-- [Webpack 4](https://webpack.js.org/) ( Bundler )
-- [CustomElements](https://developers.google.com/web/fundamentals/web-components/customelements)
+<h1 align="center">Front Static Boilerplate</h1>
 
-## Development
-``` yarn && yarn start ```
+<br />
 
-## Production 
-``` yarn build ```
+<p align="center">
+	<img width="200" src="https://d2eip9sf3oo6c2.cloudfront.net/series/square_covers/000/000/312/full/ImmuateableImmer_Final.png" />
+</p>
+
+<p align="center">
+	<a href="https://github.com/pugjs">Pug</a> • <a href="https://github.com/stylus/stylus">Stylus</a> • <a href="https://github.com/Jails-org/Jails">Jails</a> • <a href="https://developers.google.com/web/fundamentals/web-components/customelements">Web Components</a> • <a href="https://webpack.js.org/">Webpack</a>
+</p>
 
 ---
 
-## API's
+## Boilerplate Folder Structure
+
+<p align="center">
+	<img src="assets/images/boilerplate-structure.png" />
+</p>
+
+Excalidraw: https://excalidraw.com/#json=6520836873781248,gyAD5DpfUsSnXGINtnwa8A
+
+---
+
+## Yarn/NPM commands 
+
+#### Development
+``` yarn && yarn start ```
+
+#### Production 
+``` yarn build ```
+
+#### Local Test Production 
+``` yarn server ```
+
+#### Run Unit Tests
+``` yarn test:unit ```
+
+#### Run E2E (Cypress) Tests
+``` yarn test:integration ```
+
+
+---
+
+## data/apis
 You can perform any api requests and let them available for your pug template by exporting that service in `apis/index.js`
 If you export a function named as `mydata()`, it will be available as `API.mydata` on pug templates
 
 ---
 
-## Routes
+## presentation/routes.js
 You define your routes in the `routes.js` file in the root of the project. It gets the API's reference so you can generate dynamic paths.
 
 The only required fields are:
@@ -40,7 +68,8 @@ Tasks folder has a node entry point file that will integrate `apis`, `global` an
 ## Globals 
 There are some global variables and functions available on `pug` and `js` files:
 
-### Global Variables
+
+#### Global Variables
 
 All defined on `webpack.config.babel.js`:
 
@@ -62,6 +91,6 @@ All defined on `webpack.config.babel.js`:
 
 Global functions to be used on `pug` files, all defined on `/tasks/globals.js`
 
-- Boilerplate.toJSON( JSONObject ) : Transforms a json to string, useful to be used on `data` attribute on HTMLElements.
-- Boilerplate.getData( String ) : Get the json object from a file in `/data` folder.
-- Boilerpate.getRoute( String ) : Get a route from a specific `page`.  Ex. Boilerplate.getRoute('home')
+- **Boilerplate.toJSON( JSONObject )** : Transforms a json to string, useful to be used on `data` attribute on HTMLElements.
+- **Boilerplate.getData( String )** : Get the json object from a file in `/data` folder.
+- **Boilerpate.getRoute( String )** : Get a route from a specific `page`.  Ex. Boilerplate.getRoute('home')

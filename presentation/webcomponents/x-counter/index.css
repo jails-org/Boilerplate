@@ -1,0 +1,18 @@
+.x-counter {
+	display: block;
+}
+
+.x-counter__title,
+.x-counter__value {
+	display: inline-block;
+}
+
+.x-counter__button {
+	display: block;
+	margin: 5px 0;
+	background-color: #336699;
+	color: #fff;
+	padding: 5px;
+	width: 100%;
+	border-radius: 5px;
+}

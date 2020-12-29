@@ -4,7 +4,7 @@ import dependencies from 'js/dependencies'
 
 // @Components
 import * as application from 'js/application'
-import * as page from './app'
+import * as page from './page'
 import * as todo from './components/todo'
 
 // @Application

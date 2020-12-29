@@ -15,6 +15,14 @@ export default async ({ APIS }) => {
 			file: 'about/index.html',
 			title: 'About',
 			params: { isAbout: true }
+		},
+
+		{
+			page: 'form-example',
+			path:'/form-example',
+			file: 'form-example/index.html',
+			title: 'Form Example',
+			params: { isFormExample: true }
 		}
 	]
 }

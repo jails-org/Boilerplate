@@ -12,7 +12,7 @@ describe('COMPONENT/TODO', () => {
 			const { todos } = actions.ADD(model, { text })
 			const item = todos[0]
 
-			assert.equal(item.text, text)
+			assert.strictEqual(item.text, text)
 		})
 	})
 })

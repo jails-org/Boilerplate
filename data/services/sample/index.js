@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { Character } from '../../entities/character'
 
-/** @type { (Object) => Promise<Array> } */
+/** @type { (Array) => Promise<Array> } */
 export const getCharacters = async ( params = [1, 6, 7, 8, 10] ) => {
 
 	// @ts-ignore

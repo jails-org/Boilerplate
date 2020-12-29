@@ -1,9 +1,15 @@
 import fs from 'fs'
+import mustache from 'mustache'
 
 // Global Functions
 export default ({ routes }) => ({
 
 	Boilerplate :{
+
+		fs,
+
+		mustache,
+
 		toJSON(value = '') {
 			return JSON.stringify(value).replace(/\"/g, '\'')
 		},

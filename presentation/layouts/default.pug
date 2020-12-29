@@ -2,6 +2,7 @@ doctype html
 
 block variables
 include ./modules.pug
+include /components/loading/index.pug
 
 html
 
@@ -14,7 +15,6 @@ html
 		meta( name="theme-color" content="#fafafa" )
 
 		link( rel="icon" href="/assets/images/logo-stripes.png" )
-		link( rel="manifest" href="/site.webmanifest" )
 
 		+preconnect([
 			'https://www.google-analytics.com',
@@ -31,6 +31,8 @@ html
 		block head
 
 	body
+
+		+loading()
 
 		div.site( data-component=`application ${page}` )
 			block content

@@ -12,6 +12,11 @@ $color-neutral 	 = #A8A8A8
 
 /* Breakpoints
    ========================================================================== */
-$mobile  = 720px
+$mobile  = 420px
+$phablet = 768px
 $tablet  = 1024px
 $desktop = 1280px
+
+rupture.scale 		 = 0 $mobile $phablet $tablet $desktop
+rupture.scale-names  = 'mobile' 'phablet' 'tablet' 'desktop' 'hd'
+rupture.anti-overlap = -1px

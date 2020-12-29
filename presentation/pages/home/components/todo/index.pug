@@ -10,8 +10,10 @@ mixin todo()
 				h1.display-4.text-center Todo App
 
 				form.add( action="#/" )
+
 					div.col-lg-12.form-group
 						input.form-control( type="text" placeholder="Add a new Todo" name="text" autocomplete="off" data-static )
+
 					button.hide( type="submit" )
 
 					ul.nav.nav-pills.justify-content-center.mb-4
@@ -25,7 +27,7 @@ mixin todo()
 					ul.list-group
 
 						li.list-group-item.text-center( v-if="!todos.length" )
-							.item Sem items na lista
+							div.item Sem items na lista
 
 						li.list-group-item.text-left( v-repeat="item in todos" v-class="item.edit?'edit':''" )
 

@@ -7,15 +7,15 @@ const isDev = process.env.NODE_ENV == 'development'
 //@Store
 export default () => {
 
-	const Store = pandora({
+	const store = pandora({
 		model,
 		actions,
 		middlewares: isDev ? [ log(KEY) ] : []
 	})
 
 	// Saving state into localstorage at every storage changes
-	Store.subscribe(( state ) => storage.session.set(KEY, state))
-	return Store
+	store.subscribe(( state ) => storage.session.set(KEY, state))
+	return store
 }
 
 //@Model

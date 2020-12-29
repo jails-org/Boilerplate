@@ -7,7 +7,7 @@ import { getCharacters } from 'data/services/sample'
 
 // @Components
 import * as application from 'js/application'
-import * as page from './app'
+import * as page from './page'
 import * as rickandmorty from './components/rickandmorty'
 
 // @Application
