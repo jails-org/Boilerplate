@@ -214,7 +214,7 @@ export default tasks().then( ([api, routes]) => {
 							loader: 'file-loader',
 							options: {
 								outputPath: assetsFolder + 'images/',
-								name: file => file.split('/images/').pop()
+								name: file => file.split(/\/(images|node_modules)\//).pop()
 							}
 						}
 					]
