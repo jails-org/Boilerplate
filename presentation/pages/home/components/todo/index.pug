@@ -16,26 +16,27 @@ mixin todo()
 
 					button.hide( type="submit" )
 
-					ul.nav.nav-pills.justify-content-center.mb-4
-						li.nav-item
-							a.nav-link(href="#/all" v-class="filter == 'all'? 'active' :''") All
-						li.nav-item
-							a.nav-link(href="#/active" v-class="filter == 'active'? 'active' :''") Active
-						li.nav-item
-							a.nav-link(href="#/completed" v-class="filter == 'completed'? 'active' :''") Completed
+					template
+						ul.nav.nav-pills.justify-content-center.mb-4
+							li.nav-item
+								a.nav-link(href="#/all" v-class="filter == 'all'? 'active' :''") All
+							li.nav-item
+								a.nav-link(href="#/active" v-class="filter == 'active'? 'active' :''") Active
+							li.nav-item
+								a.nav-link(href="#/completed" v-class="filter == 'completed'? 'active' :''") Completed
 
-					ul.list-group
+						ul.list-group
 
-						li.list-group-item.text-center( v-if="!todos.length" )
-							div.item Sem items na lista
+							li.list-group-item.text-center( v-if="!todos.length" )
+								div.item Sem items na lista
 
-						li.list-group-item.text-left( v-repeat="item in todos" v-class="item.edit?'edit':''" )
+							li.list-group-item.text-left( v-repeat="item in todos" v-class="item.edit?'edit':''" )
 
-							div.item.custom-control.custom-checkbox
-								input.check.custom-control-input( type="checkbox" id="{{ item.id }}" data-id="{{ item.id }}" value="{{item.id}}" v-checked="{{ item.completed? 'checked':'' }}" )
-								label.custom-control-label( for="{{ item.id }}" data-id="{{ item.id }}" ) {{item.text}}
-								button.close( type="button" )
-									span.remove( data-id="{{ item.id }}" ) ×
-							input.form-control(type="text" data-id="{{ item.id }}" value="{{ item.text }}")
+								div.item.custom-control.custom-checkbox
+									input.check.custom-control-input( type="checkbox" id="{{ item.id }}" data-id="{{ item.id }}" value="{{item.id}}" v-checked="{{ item.completed? 'checked':'' }}" )
+									label.custom-control-label( for="{{ item.id }}" data-id="{{ item.id }}" ) {{item.text}}
+									button.close( type="button" )
+										span.remove( data-id="{{ item.id }}" ) ×
+								input.form-control(type="text" data-id="{{ item.id }}" value="{{ item.text }}")
 
 				button.mt-3.clear.btn.btn-warning Clear Completed
