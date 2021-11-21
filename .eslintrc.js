@@ -7,6 +7,7 @@ module.exports = {
 		'no-unused-vars': ['warn', { 'vars': 'all', 'args': 'none' }],
 		'no-console': 0
 	},
+	'plugins':['jest'],
 	'env': {
 		'es6': true,
 		'browser': true,
@@ -22,6 +23,7 @@ module.exports = {
 		}
 	},
 	'globals':{
-		'APPCONFIG': true
+		'APPCONFIG': true,
+		'expect': true
 	}
 }

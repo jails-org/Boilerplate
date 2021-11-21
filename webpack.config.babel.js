@@ -6,9 +6,9 @@ import rupture from 'rupture'
 
 /* Plugins */
 import TerserPlugin from 'terser-webpack-plugin'
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import HtmlWebPackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin'
 import ImageminPlugin from 'imagemin-webpack-plugin'
 import imageminMozjpeg from 'imagemin-mozjpeg'
@@ -20,7 +20,7 @@ import pack from './package.json'
 import tasks from './tasks'
 
 /* Source & Dist */
-const source = path.resolve(__dirname, 'presentation')
+const source = path.resolve(__dirname, 'src')
 const dist 	 = path.resolve(__dirname, 'dist')
 
 /* Environment Modes */
@@ -60,10 +60,6 @@ export default tasks().then( ([api, routes]) => {
 			]
 		},
 
-		devServer: {
-			overlay: true
-		},
-
 		optimization: {
 			splitChunks: {
 				chunks: 'initial',
@@ -71,19 +67,25 @@ export default tasks().then( ([api, routes]) => {
 			},
 			minimizer: [
 				new TerserPlugin({
-					parallel: true,
-					terserOptions: {
-						ecma: 6
-					}
+					parallel: true
 				}),
-				new OptimizeCSSAssetsPlugin({})
+				new CssMinimizerPlugin()
 			]
+		},
+
+		devServer: {
+			hot: false,
+			client : {
+				overlay : {
+					errors: true
+				}
+			}
 		},
 
 		plugins: [
 			new SVGSpritemapPlugin([
-				'./assets/icons/*.svg',
-				'./assets/icons/**/*.svg'
+				'./src/assets/icons/*.svg',
+				'./src/assets/icons/**/*.svg'
 			], {
 				output: {
 					filename: `${assetsFolder}icons/sprite.svg`
@@ -96,7 +98,8 @@ export default tasks().then( ([api, routes]) => {
 			}),
 		].concat(
 			routes.map((route) => {
-				const { page, file } = route
+				const { page } = route
+				const file = route.path == '/'? 'index.html' : route.path.substring(1) + '/index.html'
 				return new HtmlWebPackPlugin({
 					template: `${source}/pages/${page}/index.pug`,
 					templateParameters: getPugConfig({ routes, route, api }),
@@ -112,7 +115,8 @@ export default tasks().then( ([api, routes]) => {
 					}
 				})
 			}),
-			isdev ? [] : routes.map(({ file }) => {
+			isdev ? [] : routes.map(({ path }) => {
+				const file = path == '/'? 'index.html' : path.substring(1) + '/index.html'
 				return new HtmlCriticalWebpackPlugin({
 					base: dist,
 					src: file,
@@ -142,7 +146,7 @@ export default tasks().then( ([api, routes]) => {
 			}),
 			new webpack.DefinePlugin({
 				'process.env.NODE_ENV': JSON.stringify(mode),
-				APPCONFIG: JSON.stringify(APPCONFIG),
+				APPCONFIG: JSON.stringify(global.APPCONFIG),
 				site: JSON.stringify({
 					routes,
 					assetsFolder: `/${assetsFolder}`,
@@ -197,15 +201,27 @@ export default tasks().then( ([api, routes]) => {
 					test: /\.styl$/,
 					use: [
 						MiniCssExtractPlugin.loader,
-						'css-loader',
-						'stylus-loader?paths[]=./node_modules&paths[]=./presentation&resolve url&include css'
+						{
+							loader: 'css-loader'
+						},
+						{
+							loader: 'stylus-loader',
+							options: {
+								stylusOptions : {
+									import:['rupture'],
+									include:['./node_modules', './src'],
+									resolveURL: true,
+									includeCSS: true
+								}
+							}
+						}
 					]
 				},
 				{
 					test: /\.css$/,
-					use: [
-						'css-loader'
-					]
+					use: {
+						loader: 'css-loader'
+					}
 				},
 				{
 					test: /\.(gif|png|jpe?g|svg)$/i,

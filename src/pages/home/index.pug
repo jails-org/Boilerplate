@@ -1,0 +1,25 @@
+extends /layouts/default.pug
+
+include ./components/todo/index.pug
+include /shared/components/hello-world/index.pug
+//- include /node_modules/...
+
+block head
+	+log({ users: API.users, route })
+
+block content
+
+	+hello-world()
+
+		- const routeAbout = Boilerplate.getRoute('about')
+		- const routeForm = Boilerplate.getRoute('form-example')
+		- const quote = Boilerplate.getData('shared/data/quote.json')
+
+		blockquote #{quote.davinci.blockquote}
+		cite #{quote.davinci.cite}
+
+		p Visit :
+			a( href=routeAbout.path ) /#{routeAbout.title},
+			a( href=routeForm.path ) /#{routeForm.title}
+
+	+todo()

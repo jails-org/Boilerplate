@@ -1,0 +1,15 @@
+extends /layouts/default.pug
+
+include /shared/components/form/index.pug
+include ./components/register-user/index.pug
+
+block variables
+
+block head
+	+log({ users: API.users, route })
+
+block content
+
+	h1.display-3 Form Example
+
+	+register-user()

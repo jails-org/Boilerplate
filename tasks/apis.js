@@ -1,4 +1,4 @@
-import apis	 from '../data/apis'
+import apis	 from '../src/apis'
 import chalk from 'chalk'
 
 export default () => {

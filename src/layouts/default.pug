@@ -1,0 +1,41 @@
+doctype html
+
+block variables
+include ./modules.pug
+include /shared/components/loading/index.pug
+
+html
+
+	head
+
+		title Boilerplate Jails | #{route.title}
+
+		meta( charset="utf-8" )
+		meta( name="viewport" content="width=device-width, initial-scale=1" )
+		meta( name="theme-color" content="#fafafa" )
+
+		link( rel="icon" href="/assets/images/logo-stripes.png" )
+
+		+preconnect([
+			'https://www.google-analytics.com',
+			'https://ajax.googleapis.com',
+			'https://fonts.googleapis.com',
+			'https://fonts.gstatic.com'
+		])
+
+		+prevent-alert()
+		+style()
+		+js()
+		+fonts()
+
+		block head
+
+	body
+
+		+loading()
+
+		div.site( data-component=`application ${page}` )
+			block content
+
+		+third-party()
+		+svg-sprite()
