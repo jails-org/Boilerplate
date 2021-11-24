@@ -2,7 +2,6 @@
 import path from 'path'
 import webpack from 'webpack'
 import glob from 'glob'
-import rupture from 'rupture'
 
 /* Plugins */
 import TerserPlugin from 'terser-webpack-plugin'
@@ -55,7 +54,6 @@ export default tasks().then( ([api, routes]) => {
 			extensions: ['*', '.js'],
 			modules: [
 				source,
-				path.resolve(__dirname),
 				path.resolve(__dirname, 'node_modules')
 			]
 		},
@@ -154,18 +152,6 @@ export default tasks().then( ([api, routes]) => {
 					hash: mode == 'production' ? generateHash() : pack.version
 				})
 			}),
-			new webpack.LoaderOptionsPlugin({
-				test: /\.styl$/,
-				stylus: {
-					preferPathResolver: 'webpack',
-					default: {
-						use: [rupture()]
-					}
-				},
-				options: {
-					context: __dirname
-				}
-			}),
 			new CopyPlugin({
 				patterns: [
 					{ from: 'robots.txt', to: 'robots.txt' }
@@ -208,10 +194,10 @@ export default tasks().then( ([api, routes]) => {
 							loader: 'stylus-loader',
 							options: {
 								stylusOptions : {
-									import:['rupture'],
-									include:['./node_modules', './src'],
-									resolveURL: true,
-									includeCSS: true
+									paths 		: [path.resolve(__dirname, 'node_modules'), path.resolve(__dirname, 'src')],
+									import		:['rupture'],
+									resolveURL	: true,
+									includeCSS	: true
 								}
 							}
 						}
