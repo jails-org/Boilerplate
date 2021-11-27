@@ -24,5 +24,6 @@ export default () => {
 		console.log({ payload, state })
 		console.groupEnd()
 	})
+
 	return appstore
 }
