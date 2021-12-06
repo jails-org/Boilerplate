@@ -1,7 +1,8 @@
 import jails from 'jails-js'
 import Counter from '../webcomponents/x-counter'
-import * as application from 'shared/application'
 import dependencies from './dependencies'
+
+import * as application from 'shared/application'
 
 export default () => {
 

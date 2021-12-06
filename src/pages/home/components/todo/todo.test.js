@@ -1,7 +1,7 @@
 import jails from 'jails-js'
 import $ from 'jquery'
 import * as todo from './index'
-import { getPugComponent } from '../../../../shared/jest-utils'
+import { getPugComponent } from '../../../../shared/utils/jest-utils'
 
 beforeAll( (cb) => {
 
