@@ -5,6 +5,7 @@ export default function application ({ main }) {
 
 	main( _ => [
 		events,
+		pageload,
 		lazyload,
 		trackpage
 	])
@@ -12,9 +13,15 @@ export default function application ({ main }) {
 	const events = () => {
 		//Animation out
 		window.addEventListener('beforeunload', navigate)
+		window.addEventListener('unload', navigate)
+	}
+
+	const pageload = () => {
+		document.body.classList.add('in')
 	}
 
 	const navigate = (e) => {
+		document.body.classList.remove('in')
 		document.body.classList.add('out')
 	}
 

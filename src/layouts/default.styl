@@ -12,9 +12,12 @@ body
 			animation fadeout .5s forwards
 		.main-loading
 			display block
+	&.in
+		.site
+			animation fadein 1s forwards
 
 	.site
-		animation fadein 1s
+		opacity 0
 
 .main-loading
 	position absolute
@@ -23,7 +26,8 @@ body
 	display none
 
 .site
-	grid( 1/2 )
+	display grid
+	grid-template-columns 1fr 1fr
+	gap 100px
 	width 75%
 	align-items center
-	position relative
