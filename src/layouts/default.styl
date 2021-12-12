@@ -1,33 +1,30 @@
 @require '~bootswatch/dist/cosmo/bootstrap.min.css'
 @require 'styles/main'
 
+html, body, .site
+	min-height 100vh
+
 body
-	display flex
-	align-items center
-	height 100vh
-	justify-content center
 
 	&.out
-		.site
+		.site-content
 			animation fadeout .5s forwards
 		.main-loading
 			display block
-	&.in
-		.site
-			animation fadein 1s forwards
 
 	.site
-		opacity 0
+		display grid
+		grid-template-rows auto 1fr
+		align-content center
+
+		&-content
+			animation fadein 1s forwards
+			display flex
+			align-items center
+			justify-content center
 
 .main-loading
 	position absolute
 	right 20px
 	top 20px
 	display none
-
-.site
-	display grid
-	grid-template-columns 1fr 1fr
-	gap 100px
-	width 75%
-	align-items center

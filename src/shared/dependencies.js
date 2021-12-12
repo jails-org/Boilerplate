@@ -1,4 +1,4 @@
-import Router 		from 'jails.packages/router'
+import Router 		from 'jails.packages5/router'
 import validations 	from 'shared/components/form/validations'
 
 export default {

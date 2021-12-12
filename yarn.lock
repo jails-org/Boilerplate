@@ -5739,18 +5739,17 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-jails-js@^5.0.0-beta.0:
-  version "5.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.0.0-beta.0.tgz#fd60dcc1afab0c4da84dbea578d236a1e34aaa50"
-  integrity sha512-xc3g0T/r8ItdnA31jIdwIFPj5L+LTR6QvxFGW8wUFohI4RHO+2LBacL5gOFervEMEtOJCjTpNB7vhMQmLy6Jiw==
+jails-js@^5.0.0-beta.1:
+  version "5.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.0.0-beta.1.tgz#791ff1307a3c4ed9ec8fe3e108a6435ea483f020"
+  integrity sha512-JvlX2EtgdjcW1cEsuclppO8keOHFmTHr9b8FRMfPYR20ZovaFxHV4DsSXM9tYKgYfFru0vQw6uCxqO/m0GqLcg==
   dependencies:
-    jails.packages jails-org/packages.git
     morphdom "^2.6.1"
     sodajs "^0.4.10"
 
 jails.packages5@jails-org/packages5:
   version "1.0.0"
-  resolved "https://codeload.github.com/jails-org/packages5/tar.gz/94dbfa2cf13418fbe43ed1dbc18d50d6524aab87"
+  resolved "https://codeload.github.com/jails-org/packages5/tar.gz/8a3c8ff4b3de9b1fc0716a0a8622d2c93bdcf34d"
   dependencies:
     "@babel/core" "^7.15.8"
     "@babel/preset-env" "^7.15.8"
@@ -5758,10 +5757,6 @@ jails.packages5@jails-org/packages5:
     babel-loader "^8.2.3"
     glob "^7.2.0"
     webpack "^5.60.0"
-
-"jails.packages@github:jails-org/packages":
-  version "1.10.3"
-  resolved "https://codeload.github.com/jails-org/packages/tar.gz/3c1537679b7f9bda83b34896769c2f6541e0d644"
 
 jest-changed-files@^27.4.2:
   version "27.4.2"

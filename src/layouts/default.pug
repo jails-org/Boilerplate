@@ -2,13 +2,16 @@ doctype html
 
 block variables
 include ./modules.pug
+
+include /shared/components/header/index.pug
+include /shared/components/image/index.pug
 include /shared/components/loading/index.pug
 
 html
 
 	head
 
-		title Boilerplate Jails | #{route.title}
+		title Boilerplate | #{route.title}
 
 		meta( charset="utf-8" )
 		meta( name="viewport" content="width=device-width, initial-scale=1" )
@@ -35,7 +38,9 @@ html
 		+loading()
 
 		div.site( data-component=`application ${page}` )
-			block content
+			+header()
+			div.site-content
+				block content
 
 		+third-party()
 		+svg-sprite()

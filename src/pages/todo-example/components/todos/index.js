@@ -1,12 +1,13 @@
 
-export default function todo ({ main, elm, state, dependencies }) {
+export default function todos ({ main, elm, state, dependencies }) {
 
-	const { router } = dependencies
+	const { router, store } = dependencies
 	const input = elm.querySelector('[name=todo]')
 
 	main( _ => [
 		events,
-		routes
+		routes,
+		start
 	])
 
 	const events = ({ on }) => {
@@ -16,11 +17,21 @@ export default function todo ({ main, elm, state, dependencies }) {
 		on('click', '.remove', remove)
 		on('dblclick', 'label', edit)
 		on('change', '.check', toggle)
+		state.subscribe( updateStore )
 	}
 
 	const routes = () => {
 		router.get('/:filter', visibility)
 		router.get('', _ => router.navigate('/all'))
+	}
+
+	const start = () => {
+		const { todos } = store.getState()
+		state.set({ todos })
+	}
+
+	const updateStore = (s) => {
+		store.dispatch('UPDATE_TODOS', { todos: s.todos })
 	}
 
 	const add = ( e ) => {

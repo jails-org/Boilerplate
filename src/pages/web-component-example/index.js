@@ -8,7 +8,7 @@ import * as page from './page'
 
 // @Application
 jails.register('application', application, dependencies)
-jails.register('home', page, dependencies)
+jails.register('web-component-example', page, dependencies)
 
 // @Components
 

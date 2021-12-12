@@ -3,23 +3,30 @@ mixin register-user()
 
 	section.register-user( data-component="register-user" )
 
-		//- Se não houver uma variável user definida, mostra o form
 		div.feedback( v-if="!user" )
 
 			h2 User Register
 			hr
-			br
 
-			form( name="register-form" data-component="form" )
-				+form-group({ label: 'Nome', rules : { name:true } })( name="username" id="username" )
-				+form-group({ label: 'Email', rules : { email:true } })( name="email" id="email" )
-				+form-group({ label: 'Idade', rules : { required:true, minAge:18 }})( name="age" id="age" type="number" )
+			form( name="register-user" data-component="form" )
+
+				+select({ label: 'Users', rules: { required:true } })( name="users" )
+					option( value="" v-selected="{{ !form.users.value }}" ) Select a user...
+					option(
+						v-repeat="option in parent.items"
+						v-selected="{{ form.users.value == option.id }}"
+						v-value="{{ option.id }}"
+					) {{ option.name }}
+
+				+input({ label: 'Name', rules : { required:true } })( name="name" id="name" )
+				+input({ label: 'Email', rules : { required:true, email:true } })( name="email" id="email" )
+				+input({ label: 'Phone', rules : { required:true }})( name="phone" id="phone" type="text" )
+
 				button.btn.btn-primary( v-disabled="{{ !isValid }}" ) Enviar
 
-		//- Se houver um usuário definido, mostra a mensagem de feedback
-		div.feedback( v-if="user" )
-			div.alert.alert-success
+		div.feedback.mt-3
+			div.alert.alert-success( v-if="user" )
 				strong Yeah! &nbsp;
 				| The user &nbsp;
 				a.alert-link(href='#') {{user.name}} &nbsp;
-				| is registered sucessfully!
+				| is registered!

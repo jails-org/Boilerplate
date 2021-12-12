@@ -1,6 +1,6 @@
 extends /layouts/default.pug
 
-include /shared/components/hello-world/index.pug
+//- include /shared/components/hello-world/index.pug
 include ./components/rickandmorty/index.pug
 
 block variables
@@ -10,17 +10,17 @@ block head
 
 block content
 
-	+hello-world()
+	//- +hello-world()
 
-		- const routeHome = Boilerplate.getRoute( 'home' )
-		- const routeForm = Boilerplate.getRoute('form-example')
-		- const quote = Boilerplate.getData('shared/data/quote.json')
+	//- 	- const routeHome = Boilerplate.getRoute( 'home' )
+	//- 	- const routeForm = Boilerplate.getRoute('form-example')
+	//- 	- const quote = Boilerplate.getData('shared/data/quote.json')
 
-		blockquote #{quote.antoine.blockquote}
-		cite #{quote.antoine.cite}
+	//- 	blockquote #{quote.antoine.blockquote}
+	//- 	cite #{quote.antoine.cite}
 
-		p Visit:
-			a( href=routeHome.path ) /#{routeHome.title},
-			a( href=routeForm.path ) /#{routeForm.title}
+	//- 	p Visit:
+	//- 		a( href=routeHome.path ) /#{routeHome.title},
+	//- 		a( href=routeForm.path ) /#{routeForm.title}
 
 	+rickandmorty()

@@ -27,25 +27,5 @@ export default {
 			isValid: Boolean(value.match(/(\w*)\s(\w*)/)),
 			message: 'Digite um nome válido'
 		}
-	},
-
-	cep({ element, value, fields, options }) {
-		if( !value ) {
-			return { isValid:true }
-		}
-		return {
-			isValid: Boolean(value.match(/\d{5}-\d{3}/)),
-			message: 'Digite um cep válido'
-		}
-	},
-
-	minAge({ element, value, fields, options }) {
-		if( !value ) {
-			return { isValid:true }
-		}
-		return {
-			isValid: Boolean( Number(value) > options ),
-			message: 'Idade minima inválida'
-		}
 	}
 }

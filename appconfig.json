@@ -3,14 +3,14 @@
 	"development": {
 		"analytics" :"UA-XXXXX-Y",
 		"endpoints": {
-			"rickandmorty": "https://rickandmortyapi.com/api"
+			"jsonplaceholder": "https://jsonplaceholder.typicode.com"
 		}
 	},
 
 	"production": {
 		"analytics": "UA-XXXXX-Y",
 		"endpoints": {
-			"rickandmorty": "https://rickandmortyapi.com/api"
+			"jsonplaceholder": "https://jsonplaceholder.typicode.com"
 		}
 	}
 }
