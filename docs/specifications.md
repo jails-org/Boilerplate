@@ -29,5 +29,5 @@ You can fill the following questions/topics with whatever you think it's better 
 
 e.g
 
--   "We should fight for MVP and fight against undesired features"
--   "We should never forget that it should be simple, MVP will be discarted or completely changed"
+-   "We should fight against undesired features"
+-   "We should never forget that it should be simple, MVP can eventually be discarted or completely changed"

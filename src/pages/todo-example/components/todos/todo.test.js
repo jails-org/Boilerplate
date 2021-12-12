@@ -1,14 +1,18 @@
 import jails from 'jails-js'
 import $ from 'jquery'
-import * as todo from './index'
+import todoStore from '../../store'
+import * as todos from './index'
 import { getPugComponent } from '../../../../shared/utils/jest-utils'
 
 beforeAll( (cb) => {
 
-	const html = getPugComponent('pages/home/components/todo/index.pug', 'todo', {})
+	const router = { get: _ => null }
+	const store  = todoStore()
+	const html   = getPugComponent('pages/todo-example/components/todos/index.pug', 'todos', {})
+
 	document.body.innerHTML = html
 
-	jails.register('todo', todo, { router: { get: _ => null } } )
+	jails.register('todos', todos, { router, store } )
 	jails.start()
 
 	cb()
