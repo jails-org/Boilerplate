@@ -5749,7 +5749,7 @@ jails-js@^5.0.0-beta.2:
 
 jails.packages5@jails-org/packages5:
   version "1.0.0"
-  resolved "https://codeload.github.com/jails-org/packages5/tar.gz/8a3c8ff4b3de9b1fc0716a0a8622d2c93bdcf34d"
+  resolved "https://codeload.github.com/jails-org/packages5/tar.gz/3e5d684e6a052370f7e915a24583ada3fd08ce4c"
   dependencies:
     "@babel/core" "^7.15.8"
     "@babel/preset-env" "^7.15.8"
