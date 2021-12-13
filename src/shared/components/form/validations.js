@@ -2,7 +2,7 @@
 export default {
 
 	required({ element, value, fields, options }){
-		const message = 'Este campo é obrigatório'
+		const message = 'Required field'
 		const isValid = element.type == 'checkbox'
 			? element.checked
 			: Boolean( element.form[element.name].value.trim() )
@@ -15,7 +15,7 @@ export default {
 		}
 		return {
 			isValid: Boolean(value.match(/\w*\@\w*\.\w{2,}/)),
-			message: 'Digite um email válido'
+			message: 'Invalid email'
 		}
 	},
 
@@ -25,7 +25,7 @@ export default {
 		}
 		return {
 			isValid: Boolean(value.match(/(\w*)\s(\w*)/)),
-			message: 'Digite um nome válido'
+			message: 'Invalid name'
 		}
 	}
 }
