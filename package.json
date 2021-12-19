@@ -1,12 +1,12 @@
 {
   "name": "static-boilerplate",
-  "version": "v2.0.0",
+  "version": "2.0.0",
   "description": "Simplicity is the ultimate sophistication",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development ENV=dev webpack-dev-server --port 3000 --host 0.0.0.0",
-    "build": "NODE_ENV=production webpack",
-    "test": "jest",
+    "start": "NODE_ENV=development ENV=dev webpack-dev-server --config ./config/webpack.config.babel.js --port 3000 --host 0.0.0.0",
+    "build": "NODE_ENV=production webpack --config ./config/webpack.config.babel.js",
+    "test": "jest --config config/jest.config.js",
     "typecheck": "tsc --allowJs --checkJs --noEmit --skipLibCheck ./src/**/*.js",
     "server": "yarn build && cd dist && python ../tasks/server.py --port=3000"
   },

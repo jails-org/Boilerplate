@@ -15,12 +15,12 @@ import SVGSpritemapPlugin from 'svg-spritemap-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 
 /* Local Packages */
-import pack from './package.json'
-import tasks from './tasks'
+import pack from '../package.json'
+import tasks from '../tasks'
 
 /* Source & Dist */
-const source = path.resolve(__dirname, 'src')
-const dist 	 = path.resolve(__dirname, 'dist')
+const source = path.resolve(__dirname, '../src')
+const dist 	 = path.resolve(__dirname, '../dist')
 
 /* Environment Modes */
 const mode = process.env.NODE_ENV || 'production'
@@ -30,7 +30,7 @@ const isdev = mode !== 'production'
 const entryFiles = glob.sync(`${source}/pages/**/*{.js,.styl}`)
 const entryFilesIgnore = /components/
 
-global.APPCONFIG = require('./appconfig')[config]
+global.APPCONFIG = require('./appconfig.json')[config]
 
 const assetsFolder = '' // E.g: assets/
 
@@ -54,7 +54,7 @@ export default tasks().then( ([api, routes]) => {
 			extensions: ['*', '.js'],
 			modules: [
 				source,
-				path.resolve(__dirname, 'node_modules')
+				path.resolve(__dirname, '../node_modules')
 			]
 		},
 
@@ -154,7 +154,7 @@ export default tasks().then( ([api, routes]) => {
 			}),
 			new CopyPlugin({
 				patterns: [
-					{ from: 'robots.txt', to: 'robots.txt' }
+					{ from: 'src/robots.txt', to: 'robots.txt' }
 				]
 			})
 		),
