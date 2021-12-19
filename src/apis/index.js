@@ -1,12 +1,10 @@
 import axios from 'axios'
 
-export default {
+export default async () => {
 
-	// Return always a promise
-	// Can be used in pug like this: API.users
+	const { data: users } = await axios.get('https://jsonplaceholder.typicode.com/users')
 
-	async users(){
-		const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
-		return data
+	return {
+		users
 	}
 }

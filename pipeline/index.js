@@ -5,7 +5,7 @@ import globals from './globals'
 export default async () => {
 
 	const _apis    = await apis()
-	const _routes  = await routes({ APIS:_apis })
+	const _routes  = await routes({ apis:_apis })
 
 	Object.assign( global, globals({ routes:_routes }) )
 
