@@ -4,6 +4,8 @@
  */
 
 module.exports = {
+  // The root directory that Jest should scan for tests and modules within
+  rootDir: '../src',
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -112,9 +114,6 @@ module.exports = {
 
   // Automatically restore mock state between every test
   // restoreMocks: false,
-
-  // The root directory that Jest should scan for tests and modules within
-  // rootDir: undefined,
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
