@@ -1,7 +1,7 @@
 {
   "name": "static-boilerplate",
   "version": "2.0.0",
-  "description": "Simplicity is the ultimate sophistication",
+  "description": "A simple yet powerful boilerplate for static sites",
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development ENV=dev webpack-dev-server --config ./config/webpack.config.babel.js --port 3000 --host 0.0.0.0",
