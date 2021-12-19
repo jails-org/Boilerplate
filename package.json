@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production webpack --config ./config/webpack.config.babel.js",
     "test": "jest --config config/jest.config.js",
     "typecheck": "tsc --allowJs --checkJs --noEmit --skipLibCheck ./src/**/*.js",
-    "server": "yarn build && cd dist && python ../tasks/server.py --port=3000"
+    "server": "yarn build && cd dist && python ../pipeline/server.py --port=3000"
   },
   "keywords": [],
   "dependencies": {

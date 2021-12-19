@@ -16,7 +16,7 @@ import CopyPlugin from 'copy-webpack-plugin'
 
 /* Local Packages */
 import pack from '../package.json'
-import tasks from '../tasks'
+import tasks from '../pipeline'
 
 /* Source & Dist */
 const source = path.resolve(__dirname, '../src')
