@@ -4,9 +4,9 @@
   "description": "A simple yet powerful boilerplate for static sites",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development ENV=dev webpack-dev-server --config ./config/webpack.config.babel.js --port 3000 --host 0.0.0.0",
-    "build": "NODE_ENV=production webpack --config ./config/webpack.config.babel.js",
-    "test": "jest ../src/ --config config/jest.config.js",
+    "start": "NODE_ENV=development ENV=dev webpack-dev-server --port 3000 --host 0.0.0.0",
+    "build": "NODE_ENV=production webpack",
+    "test": "jest",
     "typecheck": "tsc --allowJs --checkJs --noEmit --skipLibCheck ./src/**/*.js",
     "server": "yarn build && cd dist && python ../pipeline/server.py --port=3000"
   },

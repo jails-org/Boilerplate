@@ -15,12 +15,12 @@ import SVGSpritemapPlugin from 'svg-spritemap-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 
 /* Local Packages */
-import pack from '../package.json'
-import tasks from '../pipeline'
+import pack from './package.json'
+import tasks from './pipeline'
 
 /* Source & Dist */
-const source = path.resolve(__dirname, '../src')
-const dist 	 = path.resolve(__dirname, '../dist')
+const source = path.resolve(__dirname, './src')
+const dist 	 = path.resolve(__dirname, './dist')
 
 /* Environment Modes */
 const mode = process.env.NODE_ENV || 'production'
@@ -54,7 +54,7 @@ export default tasks().then( ([api, routes]) => {
 			extensions: ['*', '.js'],
 			modules: [
 				source,
-				path.resolve(__dirname, '../node_modules')
+				path.resolve(__dirname, './node_modules')
 			]
 		},
 

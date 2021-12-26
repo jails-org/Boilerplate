@@ -5,7 +5,7 @@
 
 module.exports = {
   // The root directory that Jest should scan for tests and modules within
-  rootDir: '../src',
+  // rootDir:'./src',
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
