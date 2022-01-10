@@ -7,6 +7,7 @@ include /shared/components/header/index.pug
 include /shared/components/image/index.pug
 include /shared/components/loading/index.pug
 include /shared/components/icon/index.pug
+include /shared/components/link-to/index.pug
 
 html
 
@@ -36,7 +37,7 @@ html
 
 	body
 
-		+loading()
+		+loading().main-loading
 
 		div.site( data-component=`application ${page}` )
 			+header()

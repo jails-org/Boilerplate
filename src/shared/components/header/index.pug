@@ -1,21 +1,14 @@
 
 mixin header()
 
-	- const routeHome = Boilerplate.getRoute('home')
-	- const routeForm = Boilerplate.getRoute('form-example')
-	- const routeTodo = Boilerplate.getRoute('todo-example')
-	- const routeWebComponent = Boilerplate.getRoute('web-component-example')
-
-	- const active = page => route.page == page? 'active' : ''
-
 	header.header
 		ul.nav.pt-2
 			li.nav-item
-				a.nav-link( href=routeHome.path )
+				+link-to('home').nav-link
 					+image('logo.svg', 'Jails', false)(width="30")
 			li.nav-item
-				a.nav-link( href=routeForm.path class=active('form-example') )=routeForm.title
+				+link-to('form-example', 'title').nav-link
 			li.nav-item
-				a.nav-link( href=routeTodo.path class=active('todo-example') )=routeTodo.title
+				+link-to('todo-example', 'title').nav-link
 			li.nav-item
-				a.nav-link( href=routeWebComponent.path class=active('web-component-example') )=routeWebComponent.title
+				+link-to('web-component-example', 'title').nav-link

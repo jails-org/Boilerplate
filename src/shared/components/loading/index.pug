@@ -1,4 +1,4 @@
 
-mixin loading ( css = "main-loading" )
-	div( class=css ).loading.spinner-border.text-warning
+mixin loading ()
+	div.loading.spinner-border.text-warning()&attributes(attributes)
 		span.sr-only Loading...
