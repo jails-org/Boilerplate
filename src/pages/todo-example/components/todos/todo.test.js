@@ -28,9 +28,8 @@ describe('TODO - Component', () => {
 
 		input.val( text )
 		form.submit()
-
 		const labelText = $('.custom-control-label').text()
 
-		expect( labelText ).toBe( text )
+		requestAnimationFrame( _ => expect( labelText ).toBe( text ) )
 	})
 })
