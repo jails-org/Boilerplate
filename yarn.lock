@@ -5806,10 +5806,10 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-jails-js@^5.0.0-beta.2:
-  version "5.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.0.0-beta.2.tgz#dd930da28b69360f0d3921bd28a4ee248f10ab08"
-  integrity sha512-gHsuoolY/XP2H7TZ2cOH3uAF82hdFk2WN7Z0St1grVo4pBr2MDaljl7u4IgtME84AhS5Ug7puYFsOPzZk5y1mQ==
+jails-js@5.0.0-beta.3:
+  version "5.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.0.0-beta.3.tgz#fd4069be19e942b40c26c0b7855b08d0f0d697a4"
+  integrity sha512-1p9a5qZC4eRUPKo5uOEbH6VfaevWQ9NIkOZfcBolARByn5ZggWeGgAR1R38VGDV+14bbxvL4uuAYwzCQNyJN6g==
   dependencies:
     morphdom "^2.6.1"
     sodajs "^0.4.10"
