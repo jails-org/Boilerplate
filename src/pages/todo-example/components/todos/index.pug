@@ -36,7 +36,7 @@ mixin todos-list()
 		li.list-group-item.text-left( v-repeat="item in todos" v-class="item.edit?'edit':''" )
 
 			div.item.custom-control.custom-checkbox
-				input.check.custom-control-input( type="checkbox" id="{{ item.id }}" data-id="{{ item.id }}" value="{{item.id}}" v-checked="{{ item.completed? 'checked':'' }}" )
+				input.check.custom-control-input( type="checkbox" data-id="{{ item.id }}" value="{{item.id}}" v-checked="{{ item.completed }}" )
 				label.custom-control-label( for="{{ item.id }}" data-id="{{ item.id }}" ) {{item.text}}
 				button.close( type="button" )
 					span.remove( data-id="{{ item.id }}" ) ×

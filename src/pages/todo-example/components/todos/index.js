@@ -117,7 +117,10 @@ export const model = {
 }
 
 // @View
-export const view = ({ filter, todos }) => ({
-	filter,
-	todos: visibility( filter, todos )
-})
+export const view = ({ filter, todos:newtodos }) => {
+	const todos = visibility( filter, newtodos )
+	return {
+		filter,
+		todos
+	}
+}
