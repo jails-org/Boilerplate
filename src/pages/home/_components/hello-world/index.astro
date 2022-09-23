@@ -1,35 +1,26 @@
 ---
-const { title, jailsLogo, astroLogo } = Astro.props
+const { title, jailsLogo, astroLogo, counter } = Astro.props
 ---
 
-<style lang="styl">
-    
-    hello-world 
-        img
-            width 150px 
-            height 150px
-            margin 40px auto 20px
-        
-        .logo-plus 
-            font-size 45px
-            margin 0 50px
-</style>
+{/* Passing counter variable from Astro to Jails */}
+<hello-world class="hello-world" html-model={`{ counter: ${counter} }`}>
 
-<hello-world>
-    <section class="logo d-flex align-items-center">
+	<section class="logo d-flex align-items-center">
         <img src={astroLogo} class="d-block" />
         <span class="logo-plus d-block display-1">+</span>
-        <img src={jailsLogo} class="d-block" /> 
-    </section>    
-    <h1 class="display-3 text-center mb-4">{ title }</h1>
-    <form class="d-flex justify-content-center">
+        <img src={jailsLogo} class="d-block" />
+    </section>
+
+	<h1 class="display-3 text-center mb-4">{ title }</h1>
+
+	<form class="d-flex justify-content-center">
         <section>
-            <h3>Counter Example</h3>
-            <div class="text-center">
-                <p html-inner="counter" class="m-0 ms-2 mb-2">0</p>
-                <button type="button" class="btn btn-primary" data-add>+</button>
-                <button type="button" class="btn btn-primary" data-subtract>-</button>
-            </div>
-        </section>
+			<h3>Counter Example</h3>
+			<div class="text-center">
+				<p html-inner="counter" class="m-0 ms-2 mb-2">{ counter }</p>
+				<button type="button" class="btn btn-primary" data-add>+</button>
+				<button type="button" class="btn btn-primary" data-subtract>-</button>
+			</div>
+		</section>
     </form>
 </hello-world>

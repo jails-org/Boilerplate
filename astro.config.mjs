@@ -1,13 +1,7 @@
 import { defineConfig } from 'astro/config'
-import compress from "astro-compress"
+import compress from 'astro-compress'
 
 // https://astro.build/config
 export default defineConfig({
-  // vite: {
-  //     optimizeDeps:{
-  //         include: ['jails-js']
-  //     }
-  // }
-
   integrations: [compress()]
 })
