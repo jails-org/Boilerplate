@@ -1,0 +1,22 @@
+---
+import Layout     from 'layouts/default.astro'
+import HelloWorld from './_components/hello-world/index.astro'
+
+---
+
+<script>    
+    import { dependencies, register } from 'shared/main' 
+    import * as helloWorld from './_components/hello-world'
+    
+    register('hello-world', helloWorld, dependencies)
+</script>
+
+<Layout>
+    <main class="d-flex align-items-center justify-content-center vh-100">
+        <HelloWorld 
+            title="Hello World" 
+            jailsLogo="//jails-org.github.io/images/logo.svg"
+            astroLogo="//astro.build/assets/press/logomark-light.svg"
+        />
+    </main>
+</Layout>

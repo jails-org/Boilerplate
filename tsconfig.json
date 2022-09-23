@@ -1,11 +1,6 @@
 {
-	"compilerOptions": {
-	  "baseUrl": "./src",
-	  "outDir": "./dist/",
-	  "target": "es5",
-	  "allowJs": true
-	},
-	"exclude": [
-        "./node_modules"
-	]
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "baseUrl":"./src"
+  }
 }
