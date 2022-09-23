@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" src="//astro.build/assets/press/logomark-light.svg" alt="Astro logo">
+  <img width="200" src="https://astro.build/assets/press/logomark-light.svg" alt="Astro logo">
   <br/><br/>
   <a href="https://astro.build">Astro</a> is a website build tool for the modern web &mdash;
   <br/>
