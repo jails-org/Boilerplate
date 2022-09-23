@@ -6,7 +6,6 @@ import HelloWorld from './_components/hello-world/index.astro'
 
 <style lang="styl">
 	@import '//bootswatch.com/5/cosmo/bootstrap.min.css'
-	@require './_components/**/*.styl'
 </style>
 
 <script>
@@ -16,6 +15,7 @@ import HelloWorld from './_components/hello-world/index.astro'
 	register('hello-world', helloWorld, dependencies)
 	main()
 </script>
+
 <Layout>
 
 	<main class="d-flex align-items-center justify-content-center vh-100">

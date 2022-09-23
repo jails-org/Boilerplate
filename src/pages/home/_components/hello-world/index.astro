@@ -2,6 +2,10 @@
 const { title, jailsLogo, astroLogo, counter } = Astro.props
 ---
 
+<style lang="styl">
+	@require './index.styl'
+</style>
+
 {/* Passing counter variable from Astro to Jails */}
 <hello-world class="hello-world" html-model={`{ counter: ${counter} }`}>
 
