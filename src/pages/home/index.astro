@@ -4,27 +4,22 @@ import HelloWorld from './_components/hello-world/index.astro'
 
 ---
 
-<style lang="styl">
-	@import '//bootswatch.com/5/cosmo/bootstrap.min.css'
-</style>
-
-<script>
-    import main, { dependencies, register } from 'shared/main'
-    import * as helloWorld from './_components/hello-world'
-
-	register('hello-world', helloWorld, dependencies)
-	main()
-</script>
-
 <Layout>
 
-	<main class="d-flex align-items-center justify-content-center vh-100">
+	<script>
+		import main, { dependencies, register } from 'shared/main'
+		import * as helloWorld from './_components/hello-world'
+
+		register('hello-world', helloWorld, dependencies)
+		main()
+	</script>
+
+	<main class="d-flex align-items-center justify-content-center min-vh-100">
 
 		<HelloWorld
             title="Hello World"
             jailsLogo="//jails-org.github.io/images/logo.svg"
-            astroLogo="//astro.build/assets/press/logomark-light.svg"
-			counter={42} />
+            astroLogo="//astro.build/assets/press/logomark-light.svg" />
     </main>
 
 </Layout>

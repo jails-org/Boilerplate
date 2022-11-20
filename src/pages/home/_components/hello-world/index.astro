@@ -1,9 +1,12 @@
 ---
-const { title, jailsLogo, astroLogo, counter } = Astro.props
+import { getUsers } from '../../_services/users'
+import List from './list.astro'
+
+const { title, jailsLogo, astroLogo } = Astro.props
+const users = await getUsers()
 ---
 
-{/* Passing counter variable from Astro to Jails */}
-<hello-world class="hello-world" html-model={`{ counter: ${counter} }`}>
+<hello-world class="hello-world" html-model={`{ users: ${JSON.stringify(users)} }`}>
 
 	<section class="logo d-flex align-items-center">
         <img src={astroLogo} class="d-block" />
@@ -13,14 +16,8 @@ const { title, jailsLogo, astroLogo, counter } = Astro.props
 
 	<h1 class="display-3 text-center mb-4">{ title }</h1>
 
-	<section>
-        <h3 class="text-center">Counter Example</h3>
-		<div class="text-center">
-			<p html-inner="counter" class="m-0 ms-2 mb-2">{ counter }</p>
-			<button type="button" class="btn btn-primary" data-add>+</button>
-			<button type="button" class="btn btn-primary" data-subtract>-</button>
-		</div>
-    </section>
+	<List users={users} />
+
 </hello-world>
 
 <style lang="styl">

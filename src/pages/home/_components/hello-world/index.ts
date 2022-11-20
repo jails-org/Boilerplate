@@ -2,23 +2,26 @@
 export default function helloWorld ({ main, state }) {
 
     main( _ => [
-        events
+        events,
+		hydratation
     ])
 
     const events = ({ on }) => {
-        on('click', '[data-add]', add)
-        on('click', '[data-subtract]', subtract)
+		on('click', '[data-remove]', remove)
     }
 
-    const add = () => {
-        state.set( s => s.counter += 1 )
-    }
+	const hydratation = () => {
+		state.set({ hydrated : true })
+	}
 
-    const subtract = () => {
-        state.set( s => s.counter -= 1 )
-    }
+	const remove = (e) => {
+		const id = Number(e.target.dataset.remove)
+		const filtered = item => item.id !== id
+		state.set( s => s.users = s.users.filter( filtered ) )
+	}
 }
 
 export const model = {
-    counter : 0
+	users: [],
+	hydrated: false
 }
