@@ -15,7 +15,9 @@ export default defineConfig({
       preprocessorOptions: {
         styl: {
           use: rupture(),
-          paths: ['src/']
+          paths: ['src', 'node_modules'],
+		  resolveURL : true,
+		  includeCSS : true
         }
       }
     }
