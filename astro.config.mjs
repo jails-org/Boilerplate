@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config'
 import compress from 'astro-compress'
 import critters from 'astro-critters'
-
 import rupture from 'rupture'
 
 // https://astro.build/config
@@ -17,7 +16,10 @@ export default defineConfig({
           use: rupture(),
           paths: ['src', 'node_modules'],
 		  resolveURL : true,
-		  includeCSS : true
+		  includeCSS : true,
+		  additionalData: `
+		  	@require 'ui-system/variables'
+		  `
         }
       }
     }
