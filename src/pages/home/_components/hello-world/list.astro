@@ -9,23 +9,28 @@ const { users } = Astro.props
 <section>
 	<h3 class="text-center mb-4" html-if="users.length">Users list Example</h3>
 
-	{/* Client Side Version */}
 	<template>
-		<div class="alert alert-dismissible alert-primary" html-if="hydrated" html-for="user in users">
-			<button type="button" class="btn-close" data-bs-dismiss="alert" data-remove="{user.id}"></button>
-			<p><strong html-inner="user.name"></strong></p>
-			<p html-inner="user.address"></p>
-		</div>
+		<section html-if="users">
+			<div class="alert alert-dismissible alert-primary" html-for="user in users">
+				<button type="button" class="btn-close" data-bs-dismiss="alert" data-remove="{user.id}"></button>
+				<p><strong html-inner="user.name"></strong></p>
+				<p html-inner="user.address"></p>
+			</div>
+		</section>
 	</template>
+	{/* Client Side Version */}
 
 	{/* Server Side Version */}
-	{users.map((user) => {
-		return (
-			<div class="alert alert-dismissible alert-primary" html-if="!hydrated">
-				<button type="button" class="btn-close" data-bs-dismiss="alert" data-remove={user.id}></button>
-				<p><strong>{user.name}</strong></p>
-				<p>{user.address}</p>
-			</div>
-		)
-	})}
+	<section html-if="!users">
+		{users.map((user) => {
+			return (
+				<div class="alert alert-dismissible alert-primary">
+					<button type="button" class="btn-close" data-bs-dismiss="alert" data-remove={user.id}></button>
+					<p><strong>{user.name}</strong></p>
+					<p>{user.address}</p>
+				</div>
+			)
+		})}
+	</section>
+
 </section>
