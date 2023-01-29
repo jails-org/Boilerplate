@@ -6,6 +6,12 @@ const { title, jailsLogo, astroLogo } = Astro.props
 const users = await getUsers()
 ---
 
+<script>
+	import { dependencies, register } from 'shared/main'
+	import * as helloWorld from './index'
+	register('hello-world', helloWorld, dependencies)
+</script>
+
 <hello-world class="hello-world" html-model={`{ users: ${JSON.stringify(users)} }`}>
 
 	<section class="logo d-flex align-items-center">

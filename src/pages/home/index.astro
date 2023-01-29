@@ -6,14 +6,6 @@ import HelloWorld from './_components/hello-world/index.astro'
 
 <Layout>
 
-	<script>
-		import main, { dependencies, register } from 'shared/main'
-		import * as helloWorld from './_components/hello-world'
-
-		register('hello-world', helloWorld, dependencies)
-		main()
-	</script>
-
 	<main class="d-flex align-items-center justify-content-center min-vh-100">
 		<HelloWorld
             title="Hello World"
