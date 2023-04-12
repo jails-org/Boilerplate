@@ -14,10 +14,10 @@ const users = await getUsers()
 
 <hello-world class="hello-world" html-model={`{ users: ${JSON.stringify(users)} }`}>
 
-	<section class="logo d-flex align-items-center">
-        <img src={astroLogo} class="d-block" />
+	<section class="logo">
+        <img src={astroLogo} />
         <span class="logo-plus d-block display-1">+</span>
-        <img src={jailsLogo} class="d-block" />
+        <img src={jailsLogo} />
     </section>
 
 	<h1 class="display-3 text-center mb-4">{ title }</h1>
@@ -25,15 +25,3 @@ const users = await getUsers()
 	<List users={users} />
 
 </hello-world>
-
-<style lang="styl">
-	.hello-world
-		img
-			width 150px
-			height 150px
-			margin 40px auto 20px
-
-		.logo-plus
-			font-size 45px
-			margin 0 50px
-</style>
