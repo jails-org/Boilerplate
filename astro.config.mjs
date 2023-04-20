@@ -1,16 +1,16 @@
 import { defineConfig } from 'astro/config';
-import compress from 'astro-compress';
 import critters from 'astro-critters';
-import rupture from 'rupture';
+import tailwind from '@astrojs/tailwind';
+import image from "@astrojs/image";
 
-import tailwind from '@astrojs/tailwind'
+import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [compress(), critters(), tailwind()],
-	vite: {
-		ssr: {
-			external: ['svgo']
-		}
-	}
-})
+  integrations: [critters(), tailwind(), image(), compress()],
+  vite: {
+    ssr: {
+      external: ['svgo']
+    }
+  }
+});

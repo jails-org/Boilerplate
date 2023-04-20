@@ -1,11 +1,10 @@
 ---
-import Layout     from 'layouts/default.astro'
+import Layout from 'layouts/default.astro'
+import HelloWorld from './_components/hello-world/index.astro'
 ---
 
 <Layout>
-
-	<main>
-		<h1>Hello World</h1>
+	<main class="home min-h-screen text-lg antialiased flex justify-center items-center px-8">
+		<HelloWorld />
     </main>
-
 </Layout>

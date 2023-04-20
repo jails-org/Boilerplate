@@ -1,27 +1,17 @@
 ---
-import { getUsers } from '../../_services/users'
-import List from './list.astro'
-
-const { title, jailsLogo, astroLogo } = Astro.props
-const users = await getUsers()
+import { Image } from '@astrojs/image/components'
+import Counter from 'shared/_components/counter/index.astro'
 ---
 
-<script>
-	import { dependencies, register } from 'shared/main'
-	import * as helloWorld from './index'
-	register('hello-world', helloWorld, dependencies)
-</script>
-
-<hello-world class="hello-world" html-model={`{ users: ${JSON.stringify(users)} }`}>
-
-	<section class="logo">
-        <img src={astroLogo} />
-        <span class="logo-plus d-block display-1">+</span>
-        <img src={jailsLogo} />
-    </section>
-
-	<h1 class="display-3 text-center mb-4">{ title }</h1>
-
-	<List users={users} />
-
-</hello-world>
+<section class="hello-world flex flex-col items-center space-y-10">
+	<div class="flex items-center">
+		<Image format="svg" src="/astro-logo.svg" alt="Astro" width={150} height={150} />
+		<span class="text-6xl font-thin block px-5">+</span>
+		<Image format="svg" src="/jails-logo.svg" alt="Jails" width={130} height={100} />
+	</div>
+	<div class="font-thin">
+		<blockquote class="text-3xl">Simplicity is the utimate sophistication</blockquote>
+		<cite class="text-sm block text-center">Leonardo Da Vinci</cite>
+	</div>
+	<Counter />
+</section>
