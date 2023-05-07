@@ -22,7 +22,7 @@
     "@astrojs/image": "^0.16.6",
     "@astrojs/tailwind": "^3.1.1",
     "@types/jest": "^29.2.3",
-    "astro": "^2.2.2",
+    "astro": "^2.4.2",
     "astro-critters": "^1.1.7",
     "jest": "^29.3.1",
     "ts-jest": "^29.0.3",
