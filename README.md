@@ -1,5 +1,6 @@
 <p align="center">
-  <img width="200" src="https://w7.pngwing.com/pngs/186/608/png-transparent-html5-icon-%E2%80%A2-html-social-network-icon.png" alt="HTML 5">
+  <img width="200" valign="middle" src="public/astro-logo.svg" alt="Astro">
+  <img width="100" valign="middle" src="public/jails-logo.svg" alt="Jails">
 </p>
 <br />
 <br />
