@@ -5,7 +5,7 @@
 <br />
 <br />
 
-# Jails Static Boilerplate
+<h1 align="center">Jails Static Boilerplate</h1>
 
 This is a boilerplate to start any kind of html static project, using some of the best produtivity libraries that matches the same simplicity philosophy that Jails.
 
