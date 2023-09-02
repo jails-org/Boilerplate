@@ -1,4 +1,4 @@
-import { Component } from 'jails-js/types'
+import { type Component } from 'jails-js/types'
 
 export default function counter({ main, state } : Component) {
 
