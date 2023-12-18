@@ -1,14 +1,10 @@
-import { type Component } from 'jails-js/types'
+import { type Component } from 'jails-js'
 
-export default function counter({ main, state } : Component) {
+export default function counter({ main, on, state } : Component) {
 
-	main(_ => [
-		events
-	])
-
-	const events = ({ on }) => {
+	main(_ => {
 		on('click', 'button', onclick)
-	}
+	})
 
 	const onclick = (e) => {
 		state.set( s => s.count += 1 )
