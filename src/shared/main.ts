@@ -6,8 +6,6 @@ export const dependencies = {}
 
 jails.register('x-application', application, dependencies)
 
-export default function main (){
-	document.addEventListener('DOMContentLoaded', () => {
-		jails.start()
-    })
-}
+document.addEventListener('DOMContentLoaded', () => {
+	jails.start()
+})
