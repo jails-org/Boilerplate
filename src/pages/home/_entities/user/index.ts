@@ -7,7 +7,7 @@ export const User = ({
 	address = Object()
 
 }) => ({
-	id,
+	id : String(id),
 	name,
 	email,
 	address : UserAddress( address )
@@ -19,8 +19,7 @@ export const UserAddress = ({
 	street 	= String(),
 	suite 	= String(),
 	city 	= String(),
-	zipcode = String(),
-	geo 	= String()
+	zipcode = String()
 
 }) => {
 	return `${street}, ${city}. ${suite} - ${zipcode}`

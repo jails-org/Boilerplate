@@ -1,10 +1,16 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import rupture from 'rupture'
+import path from 'path'
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind()],
+
+	integrations: [
+		// https://docs.astro.build/en/guides/integrations-guide/tailwind
+		tailwind({ applyBaseStyles: false })
+	],
+
 	vite: {
 		ssr: {
 			external: ['svgo']
@@ -13,7 +19,10 @@ export default defineConfig({
 			preprocessorOptions: {
 				styl: {
 					use: rupture(),
-					paths: ['src', 'node_modules'],
+					paths: [
+						path.resolve('src'),
+						path.resolve('node_modules')
+					],
 					resolveURL : true,
 					includeCSS : true,
 					additionalData: ``
