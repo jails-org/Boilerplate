@@ -32,7 +32,6 @@ Each domain has its own entities, services, use-cases etc, for those scenarios t
 
 [Jails](https://jails-js.org/) - For Component and Client-side Logic
 
-[Oni](https://github.com/javiani/Oni) - Agnostic State Managment Library 
 
 <br />
 
