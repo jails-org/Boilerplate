@@ -2027,12 +2027,12 @@ jackspeak@^2.3.5:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jails-js@^5.5.5:
-  version "5.5.5"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.5.5.tgz#9c52c2e8e725cbcd292e2c42c85897651f2e2c63"
-  integrity sha512-9wunVsvQTU6DaKrmtjv2K4x4K/eCKOSAYqWU9YtnkqVPo7U5PYlVZz5aIBiKsNqIZtO1dYAdeyIjONMw3qVodw==
+jails-js@^5.7.0:
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.7.0.tgz#56333448ab144a5fdadef1edf0147a6d0bbd471e"
+  integrity sha512-fVs5ID+s2XUsm3EFCHLrpH2OI+IbJhsjNlsdw22earxHTTZhrjp/Un4/HDto6Ex1/XC+oAEJAfHKz2pVCJbK1Q==
   dependencies:
-    morphdom "^2.7.0"
+    morphdom "^2.7.2"
 
 jails.pandora@^1.0.7:
   version "1.0.7"
@@ -2752,7 +2752,7 @@ mlly@^1.2.0, mlly@^1.4.2:
     pkg-types "^1.0.3"
     ufo "^1.3.2"
 
-morphdom@^2.7.0:
+morphdom@^2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.7.2.tgz#d48a87254f9b3031c0e1ec367736721fbaf22167"
   integrity sha512-Dqb/lHFyTi7SZpY0a5R4I/0Edo+iPMbaUexsHHsLAByyixCDiLHPHyVoKVmrpL0THcT7V9Cgev9y21TQYq6wQg==
