@@ -13,7 +13,7 @@
   "dependencies": {
     "@rive-app/canvas": "^2.10.1",
     "axios": "^1.6.7",
-    "jails-js": "^5.7.0",
+    "jails-js": "^5.7.1",
     "jails.pandora": "^1.0.7",
     "rupture": "^0.7.1",
     "stylus": "^0.62.0",

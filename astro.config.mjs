@@ -12,6 +12,12 @@ export default defineConfig({
 	],
 
 	vite: {
+		resolve: {
+			preserveSymlinks: true
+		},
+		optimizeDeps: {
+			force: true
+		},
 		ssr: {
 			external: ['svgo']
 		},

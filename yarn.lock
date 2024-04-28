@@ -2027,10 +2027,10 @@ jackspeak@^2.3.5:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jails-js@^5.7.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.7.0.tgz#56333448ab144a5fdadef1edf0147a6d0bbd471e"
-  integrity sha512-fVs5ID+s2XUsm3EFCHLrpH2OI+IbJhsjNlsdw22earxHTTZhrjp/Un4/HDto6Ex1/XC+oAEJAfHKz2pVCJbK1Q==
+jails-js@^5.7.1:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.7.1.tgz#5735e8f1735cb29beba4fca2b0b448dd0642c594"
+  integrity sha512-cvtlfCt8m0R4V9DcSV901IX9r3cVHcALbL8XuPIcyWDWJQ5ReS0kRN+FCAv0OS8oBPx92jF3mLwBeJ72vVv02Q==
   dependencies:
     morphdom "^2.7.2"
 
