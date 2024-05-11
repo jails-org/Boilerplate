@@ -1890,6 +1890,11 @@ iconv-lite@^0.4.4:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
+idiomorph@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/idiomorph/-/idiomorph-0.3.0.tgz#f6675bc5bef1a72c94021e43141a3f605d2d6288"
+  integrity sha512-UhV1Ey5xCxIwR9B+OgIjQa+1Jx99XQ1vQHUsKBU1RpQzCx1u+b+N6SOXgf5mEJDqemUI/ffccu6+71l2mJUsRA==
+
 ieee754@^1.1.13, ieee754@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
@@ -2027,12 +2032,12 @@ jackspeak@^2.3.5:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jails-js@^5.7.1:
-  version "5.7.1"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.7.1.tgz#5735e8f1735cb29beba4fca2b0b448dd0642c594"
-  integrity sha512-cvtlfCt8m0R4V9DcSV901IX9r3cVHcALbL8XuPIcyWDWJQ5ReS0kRN+FCAv0OS8oBPx92jF3mLwBeJ72vVv02Q==
+jails-js@^5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.8.0.tgz#8ead9826be4b5ba1498d93d5c3c6370421823ea9"
+  integrity sha512-swwFeFXTSjsIGYBuMgZpKtFoWtEX00+o/7UcF18KVHekEcSBuOUVsJM/XZPY3jo7i0rbG29xOX2adhplJvNS5g==
   dependencies:
-    morphdom "^2.7.2"
+    idiomorph "^0.3.0"
 
 jails.pandora@^1.0.7:
   version "1.0.7"
@@ -2751,11 +2756,6 @@ mlly@^1.2.0, mlly@^1.4.2:
     pathe "^1.1.2"
     pkg-types "^1.0.3"
     ufo "^1.3.2"
-
-morphdom@^2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/morphdom/-/morphdom-2.7.2.tgz#d48a87254f9b3031c0e1ec367736721fbaf22167"
-  integrity sha512-Dqb/lHFyTi7SZpY0a5R4I/0Edo+iPMbaUexsHHsLAByyixCDiLHPHyVoKVmrpL0THcT7V9Cgev9y21TQYq6wQg==
 
 ms@2.0.0:
   version "2.0.0"
