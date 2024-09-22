@@ -415,6 +415,11 @@
     wrap-ansi "^8.1.0"
     wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
 
+"@javiani/onijs@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@javiani/onijs/-/onijs-0.0.17.tgz#3603b54e9a562f8ef5a528cf767e4385978874b9"
+  integrity sha512-6fPQmJ5OTanZAkX341XGb+ROuPQg8+cYGKXVOiA8NqGdcttXHcBhgXRhIXz3jfy0/aSsEVL6kDJS8i9hO1KLNw==
+
 "@jest/schemas@^29.6.3":
   version "29.6.3"
   resolved "https://registry.yarnpkg.com/@jest/schemas/-/schemas-29.6.3.tgz#430b5ce8a4e0044a7e3819663305a7b3091c8e03"
@@ -1705,10 +1710,10 @@ graceful-fs@^4.1.5:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
 
-grapnel@^0.7.6:
-  version "0.7.6"
-  resolved "https://registry.yarnpkg.com/grapnel/-/grapnel-0.7.6.tgz#0bf6e72b4add14e5ca2e9a478bfb1257fc210c3c"
-  integrity sha512-SSJGpPT+QCfL9q/t1Cgvk3Z13rsjeAtlBmLE0yXy4s/qVbqwx34A+NS/Bj5HHHHuHcQT3WeWtr8Az5MUprPvdQ==
+grapnel@0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/grapnel/-/grapnel-0.6.4.tgz#cc5ab40cd83d3a31b830d7d94449ce81ba684576"
+  integrity sha512-xgxJZVF2OYjbltSOkEV7uoYKAxQBzWOPr6sN9uAGC+ype/oHa5jYe+vtOqe9li4B32NXAyHJAyntWllxZ1HksA==
 
 gray-matter@^4.0.3:
   version "4.0.3"
@@ -2032,22 +2037,23 @@ jackspeak@^2.3.5:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jails-js@^5.8.0:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.8.0.tgz#8ead9826be4b5ba1498d93d5c3c6370421823ea9"
-  integrity sha512-swwFeFXTSjsIGYBuMgZpKtFoWtEX00+o/7UcF18KVHekEcSBuOUVsJM/XZPY3jo7i0rbG29xOX2adhplJvNS5g==
+jails-js@^5.8.1:
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.8.1.tgz#ed950dd600afa51853f046e85436fae5ed8e3b2a"
+  integrity sha512-y46PFXgdEQYDNo+1dnuHE9aGo85rtLpMg4HNjV+3bW0862x+p8AQjF1Z/MHipoiiJyQIrG64F8i9XIdF9d4lAQ==
   dependencies:
     idiomorph "^0.3.0"
 
-jails.pandora@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/jails.pandora/-/jails.pandora-1.0.7.tgz#374a66d02f5f91fbeccb984e866e59234a3e6e84"
-  integrity sha512-rf7YHrp9FwkX2josQ7K2OzQC91/xzE4KMbPJvkL4MQGZyFoQAaraJbCdIqojna4Nm5A71bH5Eg0b9HFMxAU6Xg==
+jails.pandora@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/jails.pandora/-/jails.pandora-1.1.1.tgz#0ebc0bd0ff9beb27b317ec199c05afcc4089eddc"
+  integrity sha512-F4ycov3T6S4by7Op5AnZqMCuXmCsfbWqWcYBcb/uI4u2UCGmhanJiycS6Kns0WihtYSmYClPpzNbpM+/JMCLog==
   dependencies:
+    "@javiani/onijs" "^0.0.17"
     "@preact/signals-core" "^1.5.1"
     "@types/node" "^20.10.7"
     glob "^10.3.10"
-    grapnel "^0.7.6"
+    grapnel "0.6.4"
     vite "^5.0.11"
 
 jiti@^1.19.1:
