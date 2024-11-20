@@ -10,6 +10,7 @@ import 'swiper/swiper-bundle.css'
 
 	register('form-validation', formValidation, { ...dependencies, ...validations })
 	register('hello-world', helloWorld, dependencies)
+
 </script>
 
 <hello-world class="hello-world">
@@ -17,10 +18,8 @@ import 'swiper/swiper-bundle.css'
 	<h1 class="display-2 text-center">Hello World</h1>
 
 	<div class="hello-world__preview position-relative">
-		<div>
-			<div html-if="!loaded" class="spinner-border text-primary" role="status"></div>
-		</div>
-		<canvas width="300px" height="300px"></canvas>
+		<div id="loading" html-if="!users" class="spinner-border text-primary" role="status"></div>
+		<canvas width="300px" height="300px" html-static></canvas>
     </div>
 
 	<div class="swiper" html-static>

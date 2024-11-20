@@ -1990,10 +1990,10 @@ jackspeak@^3.1.2:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-jails-js@^5.8.2:
-  version "5.8.2"
-  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.8.2.tgz#f6b56657e7b936c57dcc58ff39075da02b0dc095"
-  integrity sha512-xc94ZGrOMI/IOEKynFxnuq0EvqSb/MKxYW0JN/k2oM3m+CjBqDGGOeztE3jGIRQEelw5825qDeMNUwBoTdS+Og==
+jails-js@^5.8.3:
+  version "5.8.3"
+  resolved "https://registry.yarnpkg.com/jails-js/-/jails-js-5.8.3.tgz#4d5caf395bc6a950fe665fa0787425c1ab3eac83"
+  integrity sha512-AKMBHRvRi1Su4Af2yxLjyGoHipjn5hARbzVAEypgz8ObZuVPcKZmZOnei0jxYLLIv63/UEFmnu1BQH2bHOh8uQ==
   dependencies:
     idiomorph "^0.3.0"
 
@@ -3428,6 +3428,7 @@ stdin-discarder@^0.2.2:
   integrity sha512-UhDfHmA92YAlNnCfhmq0VeNL5bDbiZGg7sZ2IvPsXubGkiNa9EC+tUTsjBRsYUAz87btI6/1wf4XoVvQ3uRnmQ==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -3463,6 +3464,7 @@ stringify-entities@^4.0.0:
     character-entities-legacy "^3.0.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
