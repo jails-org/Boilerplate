@@ -16,8 +16,11 @@ import 'swiper/swiper-bundle.css'
 
 	<h1 class="display-2 text-center">Hello World</h1>
 
-	<div class="hello-world__preview">
-    	<canvas width="310px" height="300px"></canvas>
+	<div class="hello-world__preview position-relative">
+		<div>
+			<div html-if="!loaded" class="spinner-border text-primary" role="status"></div>
+		</div>
+		<canvas width="300px" height="300px"></canvas>
     </div>
 
 	<div class="swiper" html-static>
@@ -89,6 +92,12 @@ import 'swiper/swiper-bundle.css'
 			height 300px
 			border-radius 50%
 			margin 30px 0
+
+		.spinner-border
+			position absolute
+			z-index 30
+			left calc(50% - 15px)
+			top 130px
 
 		.swiper
 			max-width 400px

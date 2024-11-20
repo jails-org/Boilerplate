@@ -23,7 +23,8 @@ export default async function helloWorld ({ main, elm, on, state }) {
 
         swiper.on('transitionEnd', onslidechange)
 
-		getUsers().then( users => state.set({ users }) )
+		getUsers()
+			.then( users => state.set({ users, loaded: true }) )
 
     })
 
@@ -81,5 +82,6 @@ export default async function helloWorld ({ main, elm, on, state }) {
 export const model = {
 	users: null,
     success: null,
-    formData: null
+    formData: null,
+	loaded: false
 }
