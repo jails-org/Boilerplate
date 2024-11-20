@@ -3,12 +3,16 @@ import Layout from 'layouts/default.astro'
 import HelloWorld from './_components/hello-world/index.astro'
 ---
 
-<style>
-	@import url('https://bootswatch.com/5/cosmo/bootstrap.min.css');
-</style>
-
 <Layout>
-	<main class="home min-h-screen text-lg antialiased flex justify-center items-center px-8">
-		<HelloWorld />
-    </main>
+
+	<Fragment slot="head">
+		<link rel="stylesheet" href="https://bootswatch.com/5/cosmo/bootstrap.min.css" />
+	</Fragment>
+
+	<Fragment slot="content">
+		<main class="home min-h-screen text-lg antialiased flex justify-center items-center px-8">
+			<HelloWorld />
+		</main>
+	</Fragment>
+
 </Layout>

@@ -9,11 +9,13 @@ import GoogleFonts from 'shared/_components/google-fonts/index.astro'
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/jails-logo.svg" />
 		<GoogleFonts family={['Roboto:300,400,700']} />
+		<slot name="head" />
 	</head>
 	<body>
 		<x-application id="site">
-            <slot />
+            <slot name="content" />
 		</x-application>
+		<slot name="footer" />
 		<script is:inline data-name="analytics" type="text/third-party">
 			console.log('Third Party script body executed')
 		</script>

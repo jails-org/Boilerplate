@@ -13,11 +13,14 @@ import 'swiper/swiper-bundle.css'
 </script>
 
 <hello-world class="hello-world">
-    <h1 class="display-2 text-center">Hello World</h1>
-    <div class="hello-world__preview">
+
+	<h1 class="display-2 text-center">Hello World</h1>
+
+	<div class="hello-world__preview">
     	<canvas width="310px" height="300px"></canvas>
     </div>
-    <div class="swiper" html-static>
+
+	<div class="swiper" html-static>
 		<div class="swiper-wrapper">
 			<section class="swiper-slide" id="step-1">
 				<form novalidate>
@@ -63,9 +66,11 @@ import 'swiper/swiper-bundle.css'
 			</section>
 		</div>
     </div>
+
     <div html-if="success">
-      <pre html-inner="JSON.stringify(formData, null, 4)"></pre>
+    	<pre html-inner="JSON.stringify(formData, null, 4)"></pre>
     </div>
+
   </hello-world>
 
 <style lang="styl">
