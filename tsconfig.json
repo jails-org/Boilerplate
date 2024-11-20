@@ -2,6 +2,6 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "baseUrl":"./src",
-	"moduleResolution": "Node"
+	"moduleResolution": "bundler"
   }
 }
