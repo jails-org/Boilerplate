@@ -13,16 +13,16 @@
   "dependencies": {
     "@rive-app/canvas": "^2.10.1",
     "axios": "^1.6.7",
-    "jails-js": "^5.8.1",
+    "jails-js": "^5.8.2",
     "jails.pandora": "^1.1.1",
     "rupture": "^0.7.1",
-    "stylus": "^0.62.0",
-    "swiper": "^11.0.6",
-    "tailwindcss": "^3.4.1"
+    "stylus": "^0.64.0",
+    "swiper": "^11.1.15",
+    "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.3.5",
+    "astro": "4.16.13",
     "jsdom": "^24.0.0",
     "vitest": "^1.2.2"
   }
