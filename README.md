@@ -40,10 +40,6 @@ Each domain has its own entities, services, use-cases etc, for those scenarios t
 
 [Tailwind](https://tailwindcss.com/) - For fast component and layout development.
 
-[Stylus](https://stylus-lang.com/) - A fallback or alternative to Tailwind for edge case scenarios.
-
-[Rupture](https://jescalan.github.io/rupture/) - A Stylus media query library
-
 <br />
 
 ### For Testing
