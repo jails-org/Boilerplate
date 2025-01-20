@@ -1,5 +1,5 @@
 import { type Component } from 'jails-js'
-import { thirdParty } from './_utils/third-party'
+import { thirdParty } from 'jails.std/third-party'
 
 export default function application ({ main } : Component) {
 

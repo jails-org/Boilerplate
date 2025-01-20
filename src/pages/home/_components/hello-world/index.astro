@@ -5,12 +5,11 @@ import 'swiper/swiper-bundle.css'
 <script>
 	import { dependencies, register } from 'shared/main'
 	import * as helloWorld from './index'
-	import * as formValidation from 'jails.pandora/form-validation'
+	import * as formValidation from 'jails.std/form-validation'
 	import validations from './utils/validations'
 
 	register('form-validation', formValidation, { ...dependencies, ...validations })
 	register('hello-world', helloWorld, dependencies)
-
 </script>
 
 <hello-world class="hello-world">
@@ -28,7 +27,7 @@ import 'swiper/swiper-bundle.css'
 				<form novalidate>
 					<form-validation>
 						<label class="d-block form-label">Username</label>
-						<input type="text" name="username" data-validation="required" html-value="form.fields.username">
+						<input type="text" name="username" class="form-control" data-validation="required" html-value="form.fields.username">
 						<p class="text-danger" html-if="form.errors.username" html-inner="form.errors.username"></p>
 					</form-validation>
 					<section class="d-flex justify-content-between my-3">
@@ -40,7 +39,7 @@ import 'swiper/swiper-bundle.css'
 				<form novalidate>
 					<form-validation>
 						<label class="d-block form-label">Email</label>
-						<select name="email" data-validation="required">
+						<select name="email" class="form-select" data-validation="required">
 							<option value="">Select One:</option>
 							<option html-for="user in users"  html-inner="user.name" html-value="user.id" html-selected="form.fields.email == user.id"></option>
 						</select>
@@ -56,7 +55,7 @@ import 'swiper/swiper-bundle.css'
 				<form novalidate>
 					<form-validation>
 						<label class="d-block form-label">Password</label>
-						<input type="password" name="password" data-validation="required" html-value="form.fields.password">
+						<input type="password" name="password" class="form-control" data-validation="required" html-value="form.fields.password">
 						<p class="text-danger" html-if="form.errors.password" html-inner="form.errors.password"></p>
 					</form-validation>
 					<input type="hidden" name="finish" value="true">
@@ -75,54 +74,49 @@ import 'swiper/swiper-bundle.css'
 
   </hello-world>
 
-<style lang="styl">
+<style>
 
-	hello-world
-		display flex
-		flex-direction column
-		justify-content center
-		align-items center
-		min-height 100vh
+	hello-world {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+	}
 
-		.&__preview
-			position relative
-			overflow hidden
-			width 300px
-			height 300px
-			border-radius 50%
-			margin 30px 0
+	.hello-world__preview {
+		position: relative;
+		overflow: hidden;
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		margin: 30px 0;
+	}
 
-		.spinner-border
-			position absolute
-			z-index 30
-			left calc(50% - 15px)
-			top 130px
+	hello-world .spinner-border {
+		position: absolute;
+		z-index: 30;
+		left: calc(50% - 15px);
+		top: 130px;
+	}
 
-		.swiper
-			max-width 400px
-			height 100%
+	hello-world .swiper {
+		max-width: 400px;
+		height: 100%;
+	}
 
-		.swiper-slide
-			text-align center
-			font-size 18px
+	hello-world .swiper-slide {
+		text-align: center;
+		font-size: 18px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-			/* Center slide text vertically */
-			display: -webkit-box
-			display: -ms-flexbox
-			display: -webkit-flex
-			display: flex
-			-webkit-box-pack: center
-			-ms-flex-pack: center
-			-webkit-justify-content: center
-			justify-content: center
-			-webkit-box-align: center
-			-ms-flex-align: center
-			-webkit-align-items: center
-			align-items: center
-
-		.swiper-slide img
-			display: block
-			width: 100%
-			height: 100%
-			object-fit: cover
+	hello-world	.swiper-slide img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 </style>
