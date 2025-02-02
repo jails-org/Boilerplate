@@ -1,11 +1,11 @@
-import jails from 'jails-js'
+import { register, start } from 'jails-js'
 import * as application from './application'
 
-export const register = jails.register
+export { register } from 'jails-js'
 export const dependencies = {}
 
-jails.register('x-application', application, dependencies)
+register('x-application', application, dependencies)
 
 document.addEventListener('DOMContentLoaded', () => {
-	jails.start()
+	start()
 })
