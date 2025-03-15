@@ -27,7 +27,7 @@ import 'swiper/swiper-bundle.css'
 				<form novalidate>
 					<form-validation>
 						<label class="d-block form-label">Username</label>
-						<input type="text" name="username" class="form-control" data-validation="required" html-value="form.fields.username">
+						<input type="text" name="username" class="form-control" data-validation="required" html-value="form.values.username">
 						<p class="text-danger" html-if="form.errors.username" html-inner="form.errors.username"></p>
 					</form-validation>
 					<section class="d-flex justify-content-between my-3">
@@ -41,7 +41,7 @@ import 'swiper/swiper-bundle.css'
 						<label class="d-block form-label">Email</label>
 						<select name="email" class="form-select" data-validation="required">
 							<option value="">Select One:</option>
-							<option html-for="user in users"  html-inner="user.name" html-value="user.id" html-selected="form.fields.email == user.id"></option>
+							<option html-for="user in users"  html-inner="user.name" html-value="user.id" html-selected="form.values.email == user.id"></option>
 						</select>
 						<p class="text-danger" html-if="form.errors.email" html-inner="form.errors.email"></p>
 					</form-validation>
@@ -55,7 +55,7 @@ import 'swiper/swiper-bundle.css'
 				<form novalidate>
 					<form-validation>
 						<label class="d-block form-label">Password</label>
-						<input type="password" name="password" class="form-control" data-validation="required" html-value="form.fields.password">
+						<input type="password" name="password" class="form-control" data-validation="required" html-value="form.values.password">
 						<p class="text-danger" html-if="form.errors.password" html-inner="form.errors.password"></p>
 					</form-validation>
 					<input type="hidden" name="finish" value="true">
