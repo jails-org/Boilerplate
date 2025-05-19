@@ -6,7 +6,7 @@ const initialState = {
 	loading	: false
 }
 
-const actions = {
+export const usersCase = Store( initialState, {
 
 	FETCH_USERS( state, payload, { dispatch }) {
 		getUsers().then( users => dispatch('SET_USERS', { users }) )
@@ -26,6 +26,4 @@ const actions = {
 			users: state.users.filter( user => user.id !== id )
 		}
 	}
-}
-
-export const usersCase = Store( initialState, actions )
+})
