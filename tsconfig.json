@@ -1,7 +1,9 @@
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "baseUrl":"./src",
-	"moduleResolution": "bundler"
-  }
+	"extends": "astro/tsconfigs/strict",
+	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": ["dist"],
+	"compilerOptions": {
+		"baseUrl":"./src",
+		"moduleResolution": "bundler"
+	}
 }
