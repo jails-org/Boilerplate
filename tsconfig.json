@@ -3,6 +3,8 @@
 	"include": [".astro/types.d.ts", "**/*"],
 	"exclude": ["dist"],
 	"compilerOptions": {
-		"baseUrl":"./src"
+		"baseUrl":"./src",
+		"noImplicitAny": false,
+		 "strict": false
 	}
 }

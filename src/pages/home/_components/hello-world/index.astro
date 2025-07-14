@@ -29,10 +29,10 @@ import 'swiper/swiper-bundle.css'
 						<label class="d-block form-label">Username</label>
 						<input type="text" name="username" class="form-control" data-validation="required" html-value="form.values.username">
 						<p class="text-danger" html-if="form.errors.username" html-inner="form.errors.username"></p>
+						<div class="d-flex justify-content-between my-3">
+							<button class="btn btn-success w-100" type="submit" html-disabled="!form.isValid">Next</button>
+						</div>
 					</form-validation>
-					<section class="d-flex justify-content-between my-3">
-						<button class="btn btn-success w-100" type="submit">Next</button>
-					</section>
 				</form>
 			</section>
 			<section class="swiper-slide" id="step-2">
@@ -44,11 +44,11 @@ import 'swiper/swiper-bundle.css'
 							<option html-for="user in users"  html-inner="user.name" html-value="user.id" html-selected="form.values.email == user.id"></option>
 						</select>
 						<p class="text-danger" html-if="form.errors.email" html-inner="form.errors.email"></p>
+						<div class="d-flex justify-content-between my-3">
+							<button class="btn btn-warning w-100" type="button" data-prev="data-prev">Go Back</button>
+							<button class="btn btn-success w-100" type="submit" html-disabled="!form.isValid">Next</button>
+						</div>
 					</form-validation>
-					<section class="d-flex justify-content-between my-3">
-						<button class="btn btn-warning w-100" type="button" data-prev="data-prev">Go Back</button>
-						<button class="btn btn-success w-100" type="submit">Next</button>
-					</section>
 				</form>
 			</section>
 			<section class="swiper-slide" id="step-3">
@@ -57,12 +57,12 @@ import 'swiper/swiper-bundle.css'
 						<label class="d-block form-label">Password</label>
 						<input type="password" name="password" class="form-control" data-validation="required" html-value="form.values.password">
 						<p class="text-danger" html-if="form.errors.password" html-inner="form.errors.password"></p>
+						<input type="hidden" name="finish" value="true">
+						<div class="d-flex justify-content-between my-3">
+							<button class="btn btn-warning w-100" type="button" data-prev="data-prev">Go Back</button>
+							<button class="btn btn-success w-100" type="submit" html-disabled="!form.isValid">Send</button>
+						</div>
 					</form-validation>
-					<input type="hidden" name="finish" value="true">
-					<section class="d-flex justify-content-between my-3">
-						<button class="btn btn-warning w-100" type="button" data-prev="data-prev">Go Back</button>
-						<button class="btn btn-success w-100" type="submit">Send</button>
-					</section>
 				</form>
 			</section>
 		</div>
