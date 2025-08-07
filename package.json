@@ -12,7 +12,7 @@
   "dependencies": {
     "@rive-app/canvas": "^2.27.3",
     "@tailwindcss/vite": "^4.1.7",
-    "astro": "5.11.0",
+    "astro": "5.12.8",
     "jails-js": "^6.4.1",
     "jails.std": "^0.2.7",
     "swiper": "^11.2.6",
