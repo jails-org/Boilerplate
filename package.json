@@ -1,25 +1,29 @@
 {
-  "name": "@jails-org/boilerplate",
-  "type": "module",
-  "version": "6.0.0",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "test": "vitest run"
-  },
-  "dependencies": {
-    "@rive-app/canvas": "^2.27.3",
-    "@tailwindcss/vite": "^4.1.7",
-    "astro": "5.11.0",
-    "jails-js": "^6.4.1",
-    "jails.std": "^0.2.7",
-    "swiper": "^11.2.6",
-    "tailwindcss": "^4.1.7",
-    "vitest": "^3.1.4"
-  },
-  "devDependencies": {
-    "jsdom": "^26.1.0"
-  }
+	"name": "starter-kit",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "NODE_ENV=local astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"test:unit": "NODE_ENV=local vitest run",
+		"test:integration": "NODE_ENV=local playwright test"
+	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.1.13",
+		"astro": "^5.13.9",
+		"jails-js": "^6.6.0",
+		"jails.std": "^0.4.0",
+		"tailwindcss": "^4.1.13"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.55.0",
+		"@types/node": "^24.5.2",
+		"dotenv": "^17.2.2",
+		"jsdom": "^27.0.0",
+		"prettier": "3.6.2",
+		"prettier-plugin-astro": "0.14.1",
+		"vitest": "^3.2.4"
+	}
 }

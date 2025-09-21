@@ -1,0 +1,34 @@
+---
+import Icon from 'shared/components/icon/index.astro'
+---
+
+<script>
+	import { register, start } from 'shared/main'
+	import * as HelloWorld from './index'
+	register('hello-world', HelloWorld)
+	start()
+</script>
+
+<hello-world class="m-auto text-center space-y-2 font-thin">
+	<Icon name="jails" class="w-40 block m-auto mb-8" />
+	<h1 class="text-8xl mt-2">Jails</h1>
+	<h1 class="text-4xl mt-5">An Elegant and Minimalistic</h1>
+	<h2 class="text-4xl text-[#336699] mb-5">Micro-Framework</h2>
+	<blockquote class="mb-8 text-neutral-600">
+		<p class="font-thin text-xl my-0">
+			“Simplicity is the ultimate sophistication”
+		</p>
+		<cite class="text-sm" title="Leonardo Da Vinci"
+			>— Leonardo Da Vinci</cite
+		>
+	</blockquote>
+	<button
+		data-add
+		data-testid="hello-world-counter"
+		class="border-none bg-[#25a] px-8 py-3 rounded-full inline-block font-light text-white text-lg no-underline cursor-pointer"
+	>
+		Counter (<span data-testid="hello-world-value" html-inner="counter"
+			>0</span
+		>)
+	</button>
+</hello-world>

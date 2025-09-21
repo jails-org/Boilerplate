@@ -1,5 +1,10 @@
 ---
-import Home from './home/index.astro'
+import Layout from 'layouts/index.astro'
+import Home   from 'domain/home/index.astro'
 ---
 
-<Home />
+<Layout>
+	<main class="home min-h-screen text-lg antialiased flex justify-center items-center">
+		<Home />
+	</main>
+</Layout>

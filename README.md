@@ -11,13 +11,14 @@ This is a boilerplate to start any kind of html static project, using some of th
 
 <br />
 
-
 ### The Metaframework
+
 [Astro](astro.build)
 
 <br />
 
 ### The Folder Structure Pattern
+
 ---
 
 Folder structured by context, each page is a domain.
@@ -25,17 +26,18 @@ Each domain has its own entities, services, use-cases etc, for those scenarios t
 
 <br />
 
-
 ### For Javascript
+
 ---
+
 [Typescript](https://www.typescriptlang.org/) - Default but not mandatory
 
 [Jails](https://jails-js.org/) - For Component and Client-side Logic
 
-
 <br />
 
 ### For CSS
+
 ---
 
 [Tailwind](https://tailwindcss.com/) - For fast component and layout development.
@@ -43,9 +45,10 @@ Each domain has its own entities, services, use-cases etc, for those scenarios t
 <br />
 
 ### For Testing
+
 ---
 
-[Vitest](https://vitest.dev/) - Testing library with JSDOM configured
+[Vitest](https://vitest.dev/) - For Unit Testing
+[Playwright](https://playwright.dev/) - For Integration/E2E testing
 
 <br />
-

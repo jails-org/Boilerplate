@@ -1,15 +1,17 @@
 import { type Component } from 'jails-js'
 import { thirdParty } from 'jails.std/third-party'
 
-export default function application ({ main } : Component) {
-
+export default function appMain({ main }: Component) {
+	// Load third-party analytics library
 	const analytics = thirdParty('analytics')
 
-	main( _ => {
+	main(() => {
 		onload()
 	})
 
 	const onload = () => {
-		analytics.then( _ => console.info('application/onload - Executing after analytics loaded') )
+		analytics.then(() => {
+			console.info('app-main/onload - Executing after analytics loaded')
+		})
 	}
 }

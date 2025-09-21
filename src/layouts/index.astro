@@ -1,0 +1,23 @@
+---
+import 'shared/styles/global.css'
+---
+
+<html lang="en">
+	<head>
+		<title>Astro + Jails | Starter Kit</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<slot name="head" />
+		<script src="shared/main.ts"></script>
+	</head>
+	<body>
+		<app-main>
+			<slot />
+		</app-main>
+		<script is:inline data-name="analytics" type="text/third-party">
+			console.log('Third Party script body executed')
+		</script>
+	</body>
+</html>
