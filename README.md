@@ -1,5 +1,5 @@
 <p align="center">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img width="238" height="208" alt="Screenshot 2025-09-21 at 02 44 21" src="https://github.com/user-attachments/assets/3497edb1-e831-46ed-b34c-7d290831824d" />
+  <img width="238" height="208" alt="Screenshot 2025-09-21 at 02 44 21" src="./public/icons/jails.svg" />
 </p>
 
 
