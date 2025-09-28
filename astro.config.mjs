@@ -6,6 +6,12 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
+		resolve: {
+			preserveSymlinks: true
+		},
+		optimizeDeps: {
+			force: true
+		}
 	},
 	devToolbar: {
 		enabled: false,
