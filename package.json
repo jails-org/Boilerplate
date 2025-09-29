@@ -14,7 +14,7 @@
 		"@tailwindcss/vite": "^4.1.13",
 		"astro": "^5.14.1",
 		"jails-js": "^6.7.0",
-		"jails.std": "^0.4.2",
+		"jails.stdlib": "^1.0.0",
 		"tailwindcss": "^4.1.13"
 	},
 	"devDependencies": {
