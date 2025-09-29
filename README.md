@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="238" height="208" alt="Screenshot 2025-09-21 at 02 44 21" src="./public/icons/jails.svg" />
+  <img height="120" alt="Screenshot 2025-09-21 at 02 44 21" src="./public/icons/jails.svg" />
 </p>
 
 
